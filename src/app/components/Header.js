@@ -1,8 +1,20 @@
 "use client";
+
+import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { Globe } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,10 +22,70 @@ export default function Header() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Flight", href: "/flight" },
-    { name: "Hotel", href: "/hotel" },
-    { name: "Holiday", href: "/holiday" },
-    { name: "Umrah", href: "/umrah" },
+    { name: "eSIM", href: "/esim" },
+    { name: "Packages", href: "/packages" },
+  ];
+
+  const languages = [
+    {
+      title: "EN",
+      href: "#",
+      description: "English language modal",
+    },
+    {
+      title: "ES",
+      href: "#",
+      description: "Spanish language modal",
+    },
+    {
+      title: "FR",
+      href: "#",
+      description: "French language modal",
+    },
+    {
+      title: "DE",
+      href: "#",
+      description: "German language modal",
+    },
+    {
+      title: "JP",
+      href: "#",
+      description: "Japanese language modal",
+    },
+  ];
+
+  const services = [
+    {
+      title: "Flights",
+      href: "/services/flights",
+      description: "Book domestic and international flights",
+    },
+    {
+      title: "Hotels",
+      href: "/services/hotels",
+      description: "Find and book hotel rooms",
+    },
+    {
+      title: "Car Rentals",
+      href: "/services/cars",
+      description: "Rent cars in multiple cities",
+    },
+    {
+      title: "Travel Insurance",
+      href: "/services/insurance",
+      description: "Protect your journey with travel insurance",
+    },
+  ];
+
+  const currencies = [
+    {
+      title: "USD",
+      href: "/currency/usd",
+      description: "United States Dollar",
+    },
+    { title: "EUR", href: "/currency/eur", description: "Euro" },
+    { title: "GBP", href: "/currency/gbp", description: "British Pound" },
+    { title: "BDT", href: "/currency/bdt", description: "Bangladeshi Taka" },
   ];
 
   return (
@@ -36,7 +108,7 @@ export default function Header() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             type="button"
-            className="inline-flex p-1 text-black transition-all duration-200 border border-black md:hidden focus:bg-gray-100 hover:bg-gray-100"
+            className="inline-flex p-1 text-black transition-all duration-200 border border-black lg:hidden focus:bg-gray-100 hover:bg-gray-100"
           >
             <svg
               className="w-6 h-6"
@@ -55,7 +127,7 @@ export default function Header() {
           </button>
 
           {/* Desktop menu */}
-          <div className="hidden md:flex md:items-center md:justify-center md:space-x-5 lg:space-x-10">
+          <div className="hidden lg:flex md:items-center md:justify-center md:space-x-5 lg:space-x-10">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -70,6 +142,31 @@ export default function Header() {
                 </Link>
               );
             })}
+            <NavigationMenu viewport={false}>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-base ml-0">
+                    Services
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[300px] gap-4">
+                      <li>
+                        {services.map((item) => (
+                          <NavigationMenuLink key={item.title} asChild>
+                            <Link href="#">
+                              <div className="font-medium">{item.title}</div>
+                              <div className="text-muted-foreground">
+                                {item.description}
+                              </div>
+                            </Link>
+                          </NavigationMenuLink>
+                        ))}
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
 
           {/* Mobile menu */}
@@ -83,7 +180,7 @@ export default function Header() {
               <button
                 onClick={() => setIsOpen(false)}
                 type="button"
-                className="inline-flex p-1 ml-auto text-black transition-all duration-200 border border-black md:hidden focus:bg-gray-100 hover:bg-gray-100"
+                className="inline-flex p-1 ml-auto text-black transition-all duration-200 border border-black lg:hidden focus:bg-gray-100 hover:bg-gray-100"
               >
                 <svg
                   className="w-6 h-6"
@@ -119,37 +216,85 @@ export default function Header() {
                   </Link>
                 );
               })}
+              <Link
+                href="#"
+                className="text-base font-semibold transition-all duration-200 hover:text-opacity-80 p-2 rounded-md shadow-gray-300 shadow-lg flex items-center justify-center"
+              >
+                Services
+              </Link>
             </div>
 
             <div className="h-[2px] bg-gray-300 mb-5" />
 
             {/* Mobile login/support buttons */}
             <div className="grid grid-cols-2 gap-3">
-              <Link
-                href="/login"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center p-2 text-base font-semibold transition-all duration-200 rounded-md shadow-lg hover:text-opacity-80 shadow-gray-300 text-slate-950"
-              >
-                Login
-              </Link>
-              <Link
-                href="/support"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center p-2 text-base font-semibold transition-all duration-200 rounded-md shadow-lg hover:text-opacity-80 shadow-gray-300 text-slate-950"
-              >
-                Support
-              </Link>
+              <Button variant="blue" asChild className="text-blue-400">
+                <Link href="/list">List your Property</Link>
+              </Button>
+
+              <Button variant="outline" className="ml-2">
+                <Link href="/login">Login</Link>
+              </Button>
             </div>
           </div>
 
           {/* Desktop login button */}
-          <div className="hidden md:block">
-            <Link
-              href="/login"
-              className="flex items-center justify-center gap-2 px-5 py-2 font-bold text-white bg-teal-500 rounded-lg cursor-pointer"
-            >
-              Login
-            </Link>
+          <div className="hidden lg:flex ">
+            <NavigationMenu viewport={false}>
+              <NavigationMenuList>
+                {/* languages */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>
+                    <Globe size={15} />
+                    EN
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[300px] gap-4">
+                      <li>
+                        {languages.map((item) => (
+                          <NavigationMenuLink key={item.title} asChild>
+                            <Link href="#">
+                              <div className="font-medium">{item.title}</div>
+                              <div className="text-muted-foreground">
+                                {item.description}
+                              </div>
+                            </Link>
+                          </NavigationMenuLink>
+                        ))}
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                {/* currency */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>USD</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[300px] gap-4">
+                      <li>
+                        {currencies.map((item) => (
+                          <NavigationMenuLink key={item.title} asChild>
+                            <Link href="#">
+                              <div className="font-medium">{item.title}</div>
+                              <div className="text-muted-foreground">
+                                {item.description}
+                              </div>
+                            </Link>
+                          </NavigationMenuLink>
+                        ))}
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
+            <Button variant="blue" asChild className="text-blue-400">
+              <Link href="/list">List your Property</Link>
+            </Button>
+
+            <Button variant="outline" className="ml-2">
+              <Link href="/login">Login</Link>
+            </Button>
           </div>
         </div>
       </div>
