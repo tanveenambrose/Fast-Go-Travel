@@ -13,22 +13,6 @@ export default function Footer() {
     "Change log",
   ];
 
-  const paymentIcons = [
-    "/images/payments/visa.png",
-    "/images/payments/mastercard.png",
-    "/images/payments/amex.png",
-    "/images/payments/dbbl.png",
-    "/images/payments/mycash.png",
-    "/images/payments/rocket.png",
-    "/images/payments/bankasia.png",
-    "/images/payments/upi.png",
-    "/images/payments/nagad.png",
-    "/images/payments/bkash.png",
-    "/images/payments/payoneer.png",
-    "/images/payments/fastcash.png",
-    "/images/payments/other.png",
-  ];
-
   return (
     <footer className="bg-[#0B183A] text-white pt-10 md:pt-12 lg:pt-16 pb-8 rounded-t-xl">
       <div className="container mx-auto px-5 md:px-8 lg:px-16 grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-12 lg:gap-20">
