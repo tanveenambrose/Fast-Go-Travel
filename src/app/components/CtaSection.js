@@ -3,7 +3,7 @@ import { FaApple, FaGooglePlay } from "react-icons/fa";
 
 export default function CtaSection() {
   return (
-    <section className="relative bg-blue-600 rounded-xl overflow-hidden  px-3 sm:px-12 md:px-20 text-white flex flex-row items-center justify-between py-28 mt-10 mb-20 max-w-7xl mx-auto">
+    <section className="relative bg-blue-600 rounded-xl overflow-hidden  px-3 sm:px-12 md:px-20 text-white flex flex-row items-center justify-between py-28 my-20  max-w-7xl mx-auto">
       {/* Phone images */}
       <div className="lg:w-1/2"></div>
       <div className="hidden lg:flex lg:absolute bottom-0 left-1/6">
