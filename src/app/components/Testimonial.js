@@ -1,5 +1,8 @@
-// components/Testimonials.tsx
+"use client";
+import { Swiper, SwiperSlide } from "swiper/react";
 
+// Import Swiper styles
+import "swiper/css";
 import Image from "next/image";
 
 export default function Testimonial() {
@@ -11,6 +14,22 @@ export default function Testimonial() {
       rating: 5,
       avatar:
         "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?_gl=1*sgz58j*_ga*MTEzMzc3MjUyLjE3NTQ0MDI0OTA.*_ga_8JE65Q40S6*czE3NTU3MDE2NDQkbzUkZzEkdDE3NTU3MDE3NjYkajQ2JGwwJGgw", // replace with your images in /public
+    },
+    {
+      name: "Robert Fox",
+      role: "Google",
+      text: "I've been using the hotel booking system for several years now, and it's become my go-to platform for planning my trips. The interface is user-friendly, and I appreciate the detailed information and real-time availability of hotels.",
+      rating: 5,
+      avatar:
+        "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?_gl=1*sgz58j*_ga*MTEzMzc3MjUyLjE3NTQ0MDI0OTA.*_ga_8JE65Q40S6*czE3NTU3MDE2NDQkbzUkZzEkdDE3NTU3MDE3NjYkajQ2JGwwJGgw",
+    },
+    {
+      name: "Robert Fox",
+      role: "Google",
+      text: "I've been using the hotel booking system for several years now, and it's become my go-to platform for planning my trips. The interface is user-friendly, and I appreciate the detailed information and real-time availability of hotels.",
+      rating: 5,
+      avatar:
+        "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?_gl=1*sgz58j*_ga*MTEzMzc3MjUyLjE3NTQ0MDI0OTA.*_ga_8JE65Q40S6*czE3NTU3MDE2NDQkbzUkZzEkdDE3NTU3MDE3NjYkajQ2JGwwJGgw",
     },
     {
       name: "Robert Fox",
@@ -54,38 +73,43 @@ export default function Testimonial() {
           What our clients are saying about us?
         </h2>
 
-        {/* Cards */}
-        <div className="grid gap-6 md:grid-cols-3">
+        <Swiper
+          spaceBetween={50}
+          breakpoints={{
+            640: { slidesPerView: 1 }, // screens >= 640px
+            768: { slidesPerView: 2 }, // screens >= 768px
+            1024: { slidesPerView: 3 }, // screens >= 1024px
+          }}
+        >
           {testimonials.map((t, i) => (
-            <div
-              key={i}
-              className="bg-white shadow-lg rounded-2xl p-6 flex flex-col justify-between"
-            >
-              <div>
-                <h3 className="text-lg font-semibold mb-3">
-                  The best booking system
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  {t.text}
-                </p>
-              </div>
-              <div className="flex items-center justify-between mt-6">
-                <div className="flex items-center gap-3">
-                  <div className="relative w-[40px] h-[40px] overflow-hidden rounded-full object-fit">
-                    <Image src={t.avatar} alt={t.name} fill />
+            <SwiperSlide key={i} className="py-5">
+              <div className="bg-white shadow-lg rounded-2xl p-6 flex flex-col justify-between cursor-pointer">
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">
+                    The best booking system
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    {t.text}
+                  </p>
+                </div>
+                <div className="flex items-center justify-between mt-6">
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-[40px] h-[40px] overflow-hidden rounded-full object-fit">
+                      <Image src={t.avatar} alt={t.name} fill />
+                    </div>
+                    <div>
+                      <p className="font-semibold">{t.name}</p>
+                      <p className="text-gray-400 text-sm">{t.role}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold">{t.name}</p>
-                    <p className="text-gray-400 text-sm">{t.role}</p>
+                  <div className="flex text-yellow-400">
+                    {"★".repeat(t.rating)}
                   </div>
                 </div>
-                <div className="flex text-yellow-400">
-                  {"★".repeat(t.rating)}
-                </div>
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );
