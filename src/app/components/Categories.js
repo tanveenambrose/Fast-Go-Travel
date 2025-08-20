@@ -35,7 +35,7 @@ export default function Categories() {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto mt-26 mb-20">
+    <section className="max-w-7xl mx-auto mt-26 mb-24">
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-14">
         Categories
       </h1>
