@@ -39,10 +39,10 @@ export default function Categories() {
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-14">
         Categories
       </h1>
-      <div className="grid gird-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-10 justify-center">
+      <div className="grid gird-cols-1 px-2 md:grid-cols-3 lg:grid-cols-6 gap-5 lg:gap-10">
         {categories.map((item) => (
           <div key={item.title} className="flex flex-col items-center">
-            <div className="relative w-full h-[334px]">
+            <div className="relative w-full h-[200px] md:h-[334px]">
               <Image
                 src={item.image}
                 alt={item.title}
