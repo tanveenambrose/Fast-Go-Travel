@@ -1,3 +1,5 @@
+"use client";
+import showToast from "@/utils/showToast";
 import Image from "next/image";
 
 export default function WhoAreWe() {
@@ -39,7 +41,10 @@ export default function WhoAreWe() {
           </div>
 
           {/* Button */}
-          <button className="px-6 py-3 text-white font-semibold rounded-lg bg-gradient-to-r from-[#0A60F9] to-[#B004FE] flex items-center gap-2 w-fit">
+          <button
+            className="px-6 py-3 text-white font-semibold rounded-lg bg-gradient-to-r from-[#0A60F9] to-[#B004FE] flex items-center gap-2 w-fit"
+            onClick={showToast}
+          >
             View More →
           </button>
         </div>

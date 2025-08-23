@@ -1,3 +1,5 @@
+"use client";
+import showToast from "@/utils/showToast";
 import Image from "next/image";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 
@@ -28,13 +30,19 @@ export default function CtaSection() {
             Get Started with FastGo Today
           </h2>
           <div className="flex flex-col md:flex-row gap-4">
-            <button className="flex items-center border border-white rounded-lg px-4 py-2 hover:bg-white hover:text-blue-600 transition ">
+            <button
+              className="flex items-center border border-white rounded-lg px-4 py-2 hover:bg-white hover:text-blue-600 transition "
+              onClick={showToast}
+            >
               <FaApple />
               <span className="ml-2 text-sm font-semibold">
                 Get it on App Store
               </span>
             </button>
-            <button className="flex items-center border border-white rounded-lg px-4 py-2 hover:bg-white hover:text-blue-600 transition ">
+            <button
+              className="flex items-center border border-white rounded-lg px-4 py-2 hover:bg-white hover:text-blue-600 transition "
+              onClick={showToast}
+            >
               <FaGooglePlay />
               <span className="ml-2 text-sm font-semibold">
                 Get it on Google Play

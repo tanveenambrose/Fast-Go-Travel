@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -5,6 +7,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import showToast from "@/utils/showToast";
 import { MapPin, Star } from "lucide-react";
 import Image from "next/image";
 
@@ -84,7 +87,7 @@ export default function PopularDestination() {
                         <MapPin size={15} />
                         <span>{item.location}</span>
                       </p>
-                      <Button variant="blue">
+                      <Button variant="blue" onClick={showToast}>
                         <Star />
                         {item.rating}
                       </Button>

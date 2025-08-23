@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { toast } from "sonner";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,6 +16,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import showToast from "@/utils/showToast";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -133,7 +135,8 @@ export default function Header() {
               return (
                 <Link
                   key={link.href}
-                  href={link.href}
+                  href="#"
+                  onClick={showToast}
                   className={`text-base font-semibold transition-all duration-200 hover:text-opacity-80 ${
                     isActive ? "text-blue-500" : "text-black"
                   }`}
@@ -152,7 +155,11 @@ export default function Header() {
                     <ul className="grid w-[300px] gap-4">
                       <li>
                         {services.map((item) => (
-                          <NavigationMenuLink key={item.title} asChild>
+                          <NavigationMenuLink
+                            key={item.title}
+                            asChild
+                            onClick={showToast}
+                          >
                             <Link href="#">
                               <div className="font-medium">{item.title}</div>
                               <div className="text-muted-foreground">
@@ -252,7 +259,11 @@ export default function Header() {
                     <ul className="grid w-[300px] gap-4">
                       <li>
                         {languages.map((item) => (
-                          <NavigationMenuLink key={item.title} asChild>
+                          <NavigationMenuLink
+                            key={item.title}
+                            asChild
+                            onClick={showToast}
+                          >
                             <Link href="#">
                               <div className="font-medium">{item.title}</div>
                               <div className="text-muted-foreground">
@@ -272,7 +283,11 @@ export default function Header() {
                     <ul className="grid w-[300px] gap-4">
                       <li>
                         {currencies.map((item) => (
-                          <NavigationMenuLink key={item.title} asChild>
+                          <NavigationMenuLink
+                            key={item.title}
+                            asChild
+                            onClick={showToast}
+                          >
                             <Link href="#">
                               <div className="font-medium">{item.title}</div>
                               <div className="text-muted-foreground">
@@ -288,12 +303,17 @@ export default function Header() {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <Button variant="blue" asChild className="text-blue-400">
-              <Link href="/list">List your Property</Link>
+            <Button
+              variant="blue"
+              asChild
+              className="text-blue-400"
+              onClick={showToast}
+            >
+              <Link href="#">List your Property</Link>
             </Button>
 
-            <Button variant="outline" className="ml-2">
-              <Link href="/login">Login</Link>
+            <Button variant="outline" className="ml-2" onClick={showToast}>
+              <Link href="#">Login</Link>
             </Button>
           </div>
         </div>
