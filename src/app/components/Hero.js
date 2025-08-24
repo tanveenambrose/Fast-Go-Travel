@@ -22,7 +22,7 @@ export default function Hero() {
           companion.
         </p>
       </div>
-      <div className="w-full lg:w-1/2 h-[500px] md:h-[762px] relative">
+      <div className="w-full lg:w-1/2 h-[400px] md:h-[762px] relative">
         <Image src="/images/hero_image.png" alt="beach" fill />
       </div>
 

@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { toast } from "sonner";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -23,9 +22,9 @@ export default function Header() {
   const pathname = usePathname();
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "eSIM", href: "/esim" },
-    { name: "Packages", href: "/packages" },
+    { name: "Home", href: "/", isAvailable: true },
+    { name: "eSIM", href: "/esim", isAvailable: false },
+    { name: "Packages", href: "/packages", isAvailable: false },
   ];
 
   const languages = [
@@ -58,24 +57,24 @@ export default function Header() {
 
   const services = [
     {
-      title: "Flights",
-      href: "/services/flights",
+      title: "Flight",
+      href: "/flight",
       description: "Book domestic and international flights",
     },
     {
-      title: "Hotels",
-      href: "/services/hotels",
+      title: "Hotel",
+      href: "/hotel",
       description: "Find and book hotel rooms",
     },
     {
-      title: "Car Rentals",
-      href: "/services/cars",
-      description: "Rent cars in multiple cities",
+      title: "Bus",
+      href: "/bus",
+      description: "Bus in multiple cities",
     },
     {
-      title: "Travel Insurance",
-      href: "/services/insurance",
-      description: "Protect your journey with travel insurance",
+      title: "Visa",
+      href: "/visa",
+      description: "Find your visa",
     },
   ];
 
@@ -135,8 +134,8 @@ export default function Header() {
               return (
                 <Link
                   key={link.href}
-                  href="#"
-                  onClick={showToast}
+                  href={link.isAvailable ? link.href : "#"}
+                  onClick={() => link.isAvailable || showToast()}
                   className={`text-base font-semibold transition-all duration-200 hover:text-opacity-80 ${
                     isActive ? "text-blue-500" : "text-black"
                   }`}
@@ -155,12 +154,8 @@ export default function Header() {
                     <ul className="grid w-[300px] gap-4">
                       <li>
                         {services.map((item) => (
-                          <NavigationMenuLink
-                            key={item.title}
-                            asChild
-                            onClick={showToast}
-                          >
-                            <Link href="#">
+                          <NavigationMenuLink key={item.title} asChild>
+                            <Link href={item.href}>
                               <div className="font-medium">{item.title}</div>
                               <div className="text-muted-foreground">
                                 {item.description}
@@ -213,8 +208,11 @@ export default function Header() {
                 return (
                   <Link
                     key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
+                    href={link.isAvailable ? link.href : "#"}
+                    onClick={() => {
+                      link.isAvailable || showToast();
+                      setIsOpen(false);
+                    }}
                     className={`text-base font-semibold transition-all duration-200 hover:text-opacity-80 p-2 rounded-md shadow-gray-300 shadow-lg flex items-center justify-center ${
                       isActive ? "text-blue-300" : "text-black"
                     }`}
@@ -224,7 +222,8 @@ export default function Header() {
                 );
               })}
               <Link
-                href="#"
+                href="/flight"
+                onClick={() => setIsOpen(false)}
                 className="text-base font-semibold transition-all duration-200 hover:text-opacity-80 p-2 rounded-md shadow-gray-300 shadow-lg flex items-center justify-center"
               >
                 Services
@@ -235,12 +234,17 @@ export default function Header() {
 
             {/* Mobile login/support buttons */}
             <div className="grid grid-cols-2 gap-3">
-              <Button variant="blue" asChild className="text-blue-400">
-                <Link href="/list">List your Property</Link>
+              <Button
+                variant="blue"
+                asChild
+                className="text-blue-400"
+                onClick={showToast}
+              >
+                <Link href="#">List your Property</Link>
               </Button>
 
-              <Button variant="outline" className="ml-2">
-                <Link href="/login">Login</Link>
+              <Button variant="outline" className="ml-2" onClick={showToast}>
+                <Link href="#">Login</Link>
               </Button>
             </div>
           </div>

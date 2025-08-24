@@ -70,7 +70,7 @@ export default function PopularDestination() {
             >
               <div>
                 <Card>
-                  <CardContent className="">
+                  <CardContent>
                     <div className="relative w-full h-[289px]">
                       <Image
                         src={item.image}
