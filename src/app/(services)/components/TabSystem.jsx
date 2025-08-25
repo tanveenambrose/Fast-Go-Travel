@@ -61,7 +61,7 @@ export default function TabSystem() {
   };
 
   return (
-    <div className="max-w-[1300px] flex justify-center px-3 lg:px-7 py-5 mx-auto bg-white rounded-lg mb-10 shadow-lg shadow-gray-300 border-2">
+    <div className=" flex justify-center px-3 lg:px-7 py-12 mx-auto bg-white rounded-lg shadow-lg shadow-gray-300 border-2">
       <div className="w-full">
         <TabGroup selectedIndex={selectedIndex} onChange={handleTabChange}>
           <TabList className="flex flex-wrap items-center gap-7 lg:justify-start">

@@ -1,5 +1,11 @@
+import ServiceBanner from "../components/ServiceBanner";
+
 const Visa = () => {
-  return <div>visa page</div>;
+  return (
+    <>
+      <ServiceBanner />
+    </>
+  );
 };
 
 export default Visa;

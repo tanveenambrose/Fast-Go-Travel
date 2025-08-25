@@ -1,5 +1,11 @@
+import ServiceBanner from "../components/ServiceBanner";
+
 const Hotel = () => {
-  return <div>hotel</div>;
+  return (
+    <>
+      <ServiceBanner />
+    </>
+  );
 };
 
 export default Hotel;

@@ -1,5 +1,11 @@
+import ServiceBanner from "../components/ServiceBanner";
+
 const Bus = () => {
-  return <div>/* Your component code here */</div>;
+  return (
+    <>
+      <ServiceBanner />
+    </>
+  );
 };
 
 export default Bus;
