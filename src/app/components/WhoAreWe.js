@@ -1,3 +1,5 @@
+"use client";
+import showToast from "@/utils/showToast";
 import Image from "next/image";
 
 export default function WhoAreWe() {
@@ -13,7 +15,7 @@ export default function WhoAreWe() {
             <span className="w-2 h-2 rounded-full bg-blue-600 mr-2"></span>
             Who we are
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             Best Immigration & Visa Consultation
           </h1>
           <p className="text-gray-500">
@@ -23,7 +25,7 @@ export default function WhoAreWe() {
           </p>
 
           {/* Features */}
-          <div className="flex gap-8">
+          <div className="flex gap-8 my-8">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-600">
                 ✈️
@@ -39,7 +41,10 @@ export default function WhoAreWe() {
           </div>
 
           {/* Button */}
-          <button className="px-6 py-3 text-white font-semibold rounded-lg bg-gradient-to-r from-[#0A60F9] to-[#B004FE] flex items-center gap-2 w-fit">
+          <button
+            className="px-6 py-3 text-white font-semibold rounded-lg bg-gradient-to-r from-[#0A60F9] to-[#B004FE] flex items-center gap-2 w-fit"
+            onClick={showToast}
+          >
             View More →
           </button>
         </div>
