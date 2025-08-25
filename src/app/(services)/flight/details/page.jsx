@@ -1,5 +1,13 @@
+import ReviewBooking from "../components/ReviewBooking";
+import TravelerDetails from "../components/TravelerDetails";
+
 const FlightDetails = () => {
-  return <div>Flight details</div>;
+  return (
+    <>
+      <ReviewBooking />
+      <TravelerDetails />
+    </>
+  );
 };
 
 export default FlightDetails;
