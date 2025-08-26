@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronUp } from "lucide-react";
 import showToast from "@/utils/showToast";
 
-export default function ReviewBooking() {
+const ReviewBusBooking = () => {
   return (
     <section className="w-full px-4 sm:px-6 lg:px-8 py-6 mt-14">
       <h2 className="text-xl sm:text-4xl font-bold text-[#055BC9] mb-10">
@@ -36,55 +36,51 @@ export default function ReviewBooking() {
             {/* Airline Info */}
             <div className="flex items-center gap-4 py-4 border-b-[1px]">
               <Image
-                src="/images/biman_logo.png"
+                src="/images/soudia.png"
                 alt="Biman Bangladesh Airlines"
-                width={74}
-                height={75}
+                width={160}
+                height={49}
                 className="rounded-full"
               />
               <div>
                 <p className="text-sm sm:text-base font-medium text-gray-800">
-                  Biman Bangladesh Airlines
+                  Soudia Coach Service
                 </p>
-                <p className="text-base sm:text-lg font-semibold">BG - 147</p>
+                <p className="text-base sm:text-lg font-semibold">
+                  1, Hino 1J Pluss, Non AC
+                </p>
               </div>
-              <span className="ml-auto text-sm sm:text-lg font-medium text-gray-700">
-                Economy Class
-              </span>
             </div>
 
             {/* Flight Timings */}
-            <div className="grid grid-cols-3 gap-6 text-sm sm:text-base pt-3">
+            <div className="grid grid-cols-3 gap-6 text-sm sm:text-base pt-7">
               <div className="col-span-1 ">
                 <p className="font-semibold text-gray-500">Depart</p>
                 <p className="mt-1 font-semibold text-lg text-slate-950">
-                  15:00
+                  07:15 PM
                 </p>
                 <p className="text-gray-500">Sun, 11 July 2025</p>
-                <p className="text-gray-600">Dhaka (DAC)</p>
+                <p className="text-gray-600">Dhaka </p>
               </div>
               <div className="flex flex-col items-center justify-center col-span-1 ">
                 <span className="text-gray-400 text-xs md:text-sm">
-                  3 hour 0 minute
+                  12 hour 0 minute
                 </span>
                 <Image
                   src="/images/arrow.png"
                   alt="arrow"
-                  width={100}
-                  height={20}
+                  width={124}
+                  height={0}
                   className="my-1"
                 />
-                <span className="text-xs md:text-sm text-gray-400">
-                  Non Stop
-                </span>
               </div>
               <div className="col-span-1 ml-auto">
                 <p className="font-semibold text-gray-500">Arrive</p>
                 <p className="mt-1 font-semibold text-lg text-slate-950">
-                  17:00
+                  07:15 AM
                 </p>
                 <p className="text-gray-500">Sun, 11 July 2025</p>
-                <p className="text-gray-600">Dubai (DXB)</p>
+                <p className="text-gray-600">Cox's Bazar</p>
               </div>
             </div>
           </CardContent>
@@ -96,14 +92,14 @@ export default function ReviewBooking() {
             {/* Airline Title */}
             <div className="flex items-center gap-3 pb-3 border-b-[1px]">
               <Image
-                src="/images/biman_logo.png"
+                src="/images/soudia.png"
                 alt="Biman Bangladesh Airlines"
-                width={48}
+                width={160}
                 height={49}
                 className="rounded-full"
               />
               <h3 className="text-sm sm:text-2xl font-bold text-gray-800">
-                Biman Bangladesh Airlines
+                Soudia Coach Service
               </h3>
             </div>
 
@@ -121,7 +117,7 @@ export default function ReviewBooking() {
               </div>
               <div className="flex justify-between">
                 <span className="text-base text-slate-500 font-medium">
-                  Taxes & Fees
+                  Taxes + Fees
                 </span>
                 <span className="font-bold text-lg md:text-xl">6,500 BDT</span>
               </div>
@@ -146,4 +142,6 @@ export default function ReviewBooking() {
       </div>
     </section>
   );
-}
+};
+
+export default ReviewBusBooking;

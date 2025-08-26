@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${dmSans.variable} ${manrope.variable} antialiased max-w-[1440px] mx-auto overflow-x-visible`}
+        className={`${geistSans.variable} ${geistMono.variable} ${dmSans.variable} ${manrope.variable} antialiased`}
       >
         <Header />
         <main>{children}</main>

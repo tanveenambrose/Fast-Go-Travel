@@ -89,7 +89,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Footer */}
-      <div className="flex flex-col items-center justify-between px-5 pt-4 mt-10 text-base text-gray-400 border-t border-gray-700 md:px-16 md:flex-row">
+      <div className="flex flex-col items-center justify-between px-5 pt-4 mt-10 text-base text-gray-400 border-t border-gray-700 md:flex-row max-w-[1440px] mx-auto">
         <p>Copyright © FastGo | Designed by</p>
         <p className="mt-2 md:mt-0">FastGo — Powered by FastGo</p>
         <div className="flex gap-3 mt-2 md:mt-0">

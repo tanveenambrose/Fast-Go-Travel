@@ -52,9 +52,9 @@ export default function Testimonial() {
   return (
     <section
       className=" bg-white py-40 my-20 bg-no-repeat bg-bottom bg-contain"
-      style={{ backgroundImage: `url(/images/buildings.png)` }}
+      style={{ backgroundImage: `url(/images/buildings.svg)` }}
     >
-      <div className="container mx-auto px-6 md:px-12 lg:px-20">
+      <div className="container mx-auto px-6 md:px-12 lg:px-26">
         {/* Top Label */}
         <div className="flex items-center gap-2 mb-6 bg-[#055BC9] w-[181px] text-white py-3 px-4 rounded-4xl">
           <Image
