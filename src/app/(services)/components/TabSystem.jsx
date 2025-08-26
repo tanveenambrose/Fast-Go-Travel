@@ -2,10 +2,20 @@
 
 import { useEffect, useState } from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import { BookCopy, BusFront, CardSim, Hotel, Plane, Ship } from "lucide-react";
+import {
+  BookCopy,
+  BusFront,
+  CardSim,
+  Hotel,
+  Plane,
+  Ship,
+  UserRound,
+} from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import InnerTab from "./InnerTab";
 import showToast from "@/utils/showToast";
+import FlightSearchBar from "./FlightSearchBar";
+import BusSearchBar from "./BusSearchBar";
 
 // Map paths to tab indices
 const pathToIndex = {
@@ -13,6 +23,8 @@ const pathToIndex = {
   "/hotel": 1,
   "/bus": 2,
   "/visa": 3,
+  "/tour": 4,
+  "/cruise": 5,
 };
 
 // Map indices back to paths
@@ -21,6 +33,8 @@ const indexToPath = {
   1: "/hotel",
   2: "/bus",
   3: "/visa",
+  4: "/tour",
+  5: "/cruise",
 };
 
 export default function TabSystem() {
@@ -32,12 +46,42 @@ export default function TabSystem() {
   );
 
   const tabs = [
-    { tab: "Flight", icon: <Plane />, availabe: true },
-    { tab: "Hotel", icon: <Hotel />, availabe: true },
-    { tab: "Bus", icon: <BusFront />, availabe: true },
-    { tab: "Visa", icon: <CardSim />, availabe: true },
-    { tab: "Tour Packages", icon: <BookCopy />, availabe: false },
-    { tab: "Cruises", icon: <Ship />, availabe: false },
+    {
+      tab: "Flight",
+      icon: <Plane color={pathToIndex[pathname] == 0 ? "white" : "#989898"} />,
+      availabe: true,
+    },
+    {
+      tab: "Hotel",
+      icon: <Hotel color={pathToIndex[pathname] == 1 ? "white" : "#989898"} />,
+      availabe: true,
+    },
+    {
+      tab: "Bus",
+      icon: (
+        <BusFront color={pathToIndex[pathname] == 2 ? "white" : "#989898"} />
+      ),
+      availabe: true,
+    },
+    {
+      tab: "Visa",
+      icon: (
+        <CardSim color={pathToIndex[pathname] == 3 ? "white" : "#989898"} />
+      ),
+      availabe: true,
+    },
+    {
+      tab: "Tour Packages",
+      icon: (
+        <BookCopy color={pathToIndex[pathname] == 4 ? "white" : "#989898"} />
+      ),
+      availabe: true,
+    },
+    {
+      tab: "Cruises",
+      icon: <Ship color={pathToIndex[pathname] == 5 ? "white" : "#989898"} />,
+      availabe: true,
+    },
   ];
 
   const commonTabClass = `relative flex flex-col lg:flex-row items-center gap-1 lg:gap-2 px-3 py-1 font-semibold transition-all duration-300 text-base lg:text-lg
@@ -65,36 +109,60 @@ export default function TabSystem() {
       <div className="w-full">
         <TabGroup selectedIndex={selectedIndex} onChange={handleTabChange}>
           <TabList className="flex flex-wrap items-center gap-7 lg:justify-start">
-            {tabs.map((item) => (
+            {tabs.map((item, i) => (
               <Tab
                 key={item.tab}
                 onClick={() => item.availabe || showToast()}
                 className={({ selected }) =>
                   `${commonTabClass} ${
-                    selected ? "bg-blue-500 text-white" : "bg-white text-black"
+                    selected
+                      ? "bg-[#055BC9] text-white"
+                      : "bg-white text-[#989898]"
                   }`
                 }
               >
                 {item.icon}
-                {item.tab}
+                <span
+                  className={
+                    pathToIndex[pathname] == i ? "text-white" : "text-[#989898]"
+                  }
+                >
+                  {item.tab}
+                </span>
               </Tab>
             ))}
+            <div className="md:ml-auto text-[#989898] text-sm flex items-center gap-1">
+              <UserRound size={15} />
+              Need some help?
+            </div>
           </TabList>
 
           {/* <div className="w-full h-[1px] border-black/30 border-[1px] mt-1 lg:mt-3"></div> */}
 
           <TabPanels className="mt-10">
+            {/* flight */}
             <TabPanel>
-              <InnerTab />
+              <InnerTab>
+                <FlightSearchBar />
+              </InnerTab>
             </TabPanel>
+            {/* hotel */}
             <TabPanel>
-              <InnerTab />
+              <InnerTab>
+                <FlightSearchBar />
+              </InnerTab>
             </TabPanel>
+            {/* bus */}
             <TabPanel>
-              <InnerTab />
+              <InnerTab>
+                <BusSearchBar />
+              </InnerTab>
             </TabPanel>
+            {/* visa */}
             <TabPanel>
-              <InnerTab />
+              <InnerTab>
+                <FlightSearchBar />
+              </InnerTab>
             </TabPanel>
           </TabPanels>
         </TabGroup>

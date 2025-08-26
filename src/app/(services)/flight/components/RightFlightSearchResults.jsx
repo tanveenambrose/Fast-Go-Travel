@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import showToast from "@/utils/showToast";
 import Link from "next/link";
+import SortBar from "../../components/SortBar";
 
 const flights = Array(5).fill({
   airline: "Biman Bangladesh Airlines",
@@ -35,18 +36,7 @@ const RightFlightResults = () => {
   return (
     <div className="space-y-6 mb-20">
       {/* Results header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 shadow-sm py-5 px-3 rounded-md">
-        <p className="text-gray-700">Showing 1-10 of 56 results</p>
-
-        <label>
-          Sort by :
-          <select className="border rounded-md px-3 py-2 text-sm ml-2">
-            <option>Recommended</option>
-            <option>Lowest Price</option>
-            <option>Shortest Duration</option>
-          </select>
-        </label>
-      </div>
+      <SortBar />
 
       {/* Flight cards */}
       {flights.map((f, i) => (

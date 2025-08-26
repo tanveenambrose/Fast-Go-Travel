@@ -3,10 +3,10 @@ import TravelerDetails from "../components/TravelerDetails";
 
 const FlightDetails = () => {
   return (
-    <>
+    <div className="max-w-[1440px] mx-auto">
       <ReviewBooking />
       <TravelerDetails />
-    </>
+    </div>
   );
 };
 
