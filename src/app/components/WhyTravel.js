@@ -39,7 +39,7 @@ export default function WhyTravel() {
           {features.map((item, index) => (
             <div
               key={index}
-              className={`bg-[#E9F4FF] rounded-2xl shadow-sm p-6 hover:shadow-md transition ${
+              className={`bg-[#f6f6f6] hover:bg-[#e9f4ff] shadow-[#e9f4ff] transition-colors duration-300 rounded-2xl shadow-sm p-6 hover:shadow-lg  ${
                 index % 2 != 0 ? "md:mt-20" : "md:mb-20"
               }`}
             >

@@ -9,7 +9,7 @@ import showToast from "@/utils/showToast";
 import Link from "next/link";
 import { ChevronUp } from "lucide-react";
 
-export default function TravelerDetails() {
+export default function BusTravelerDetails() {
   return (
     <section className="w-full mx-auto p-6 bg-white space-y-6 my-20">
       {/* Header */}
@@ -19,7 +19,7 @@ export default function TravelerDetails() {
 
       <div className="py-4 border rounded-xl shadow-sm px-6">
         {/* Traveler Info */}
-        <div className="space-y-6 border-b-2">
+        <div className="space-y-6 border-b-2 pb-7">
           <div className="flex items-center justify-between">
             <h3 className="text-gray-700 font-medium md:text-2xl text-lg">
               Traveler 1 (Adult) Primary contact
@@ -64,23 +64,7 @@ export default function TravelerDetails() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <Label className="mb-2 text-base md:text-lg font-semibold">
-                Middle Name
-              </Label>
-              <Input placeholder="Middle Name" />
-            </div>
-            <div>
-              <Label className="mb-2 text-base md:text-lg font-semibold">
                 Date of Birth
-              </Label>
-              <Input placeholder="DD/MM/YYYY" />
-            </div>
-          </div>
-
-          {/* Passport + Country */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-7">
-            <div>
-              <Label className="mb-2 text-base md:text-lg font-semibold">
-                Passport Expiry Date
               </Label>
               <Input placeholder="DD/MM/YYYY" />
             </div>
@@ -89,7 +73,7 @@ export default function TravelerDetails() {
                 htmlFor="country"
                 className="mb-2 block text-base md:text-lg font-semibold"
               >
-                Country
+                City
               </label>
               <div className="relative">
                 <select
@@ -101,9 +85,9 @@ export default function TravelerDetails() {
                   <option value="" disabled>
                     Select
                   </option>
-                  <option value="bd">Bangladesh</option>
-                  <option value="us">USA</option>
-                  <option value="uk">UK</option>
+                  <option value="dha">Dhaka</option>
+                  <option value="tan">Tangail</option>
+                  <option value="raj">Rajshahi</option>
                 </select>
 
                 {/* arrow (aligned with text-center vertically) */}
@@ -168,7 +152,7 @@ export default function TravelerDetails() {
           variant="outline"
           className="rounded-full px-20 md:px-6 py-6 text-lg"
         >
-          <Link href="/flight">← Back</Link>
+          <Link href="/bus">← Back</Link>
         </Button>
         <Button
           onClick={showToast}
