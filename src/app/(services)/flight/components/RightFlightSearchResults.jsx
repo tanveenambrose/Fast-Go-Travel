@@ -95,8 +95,10 @@ const RightFlightResults = () => {
 
             {/* Actions */}
             <div className="flex flex-col sm:flex-row md:flex-col items-stretch md:items-end gap-2 mt-3 md:mt-0 w-full sm:w-auto">
-              <Button className="bg-gradient-to-r from-[#0A60F9] to-[#B004FE] text-white font-semibold rounded-lg px-5 py-2 w-full sm:w-auto">
-                Book Now
+              <Button className="bg-gradient-to-r from-[#0A60F9] to-[#B004FE] text-white font-semibold rounded-lg  py-2 w-full sm:w-auto">
+                <Link href="/flight/details" className="px-5">
+                  Book Now
+                </Link>
               </Button>
               <div
                 className="text-blue-600 text-sm font-medium cursor-pointer flex items-center justify-center gap-1 w-full sm:w-auto lg:mt-10 mt-5"

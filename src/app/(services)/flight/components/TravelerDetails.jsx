@@ -4,8 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-
-import showToast from "@/utils/showToast";
 import Link from "next/link";
 import { ChevronUp } from "lucide-react";
 
@@ -170,11 +168,10 @@ export default function TravelerDetails() {
         >
           <Link href="/flight">← Back</Link>
         </Button>
-        <Button
-          onClick={showToast}
-          className="rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white px-20 text-lg py-6"
-        >
-          Continue
+        <Button className="rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white  text-lg py-6">
+          <Link href="/payment/details" className="px-20 ">
+            Continue
+          </Link>
         </Button>
       </div>
     </section>
