@@ -16,6 +16,7 @@ import InnerTab from "./InnerTab";
 import showToast from "@/utils/showToast";
 import FlightSearchBar from "./FlightSearchBar";
 import BusSearchBar from "./BusSearchBar";
+import HotelSearchBar from "./HotelSearchBar";
 
 // Map paths to tab indices
 const pathToIndex = {
@@ -149,7 +150,7 @@ export default function TabSystem() {
             {/* hotel */}
             <TabPanel>
               <InnerTab>
-                <FlightSearchBar />
+                <HotelSearchBar />
               </InnerTab>
             </TabPanel>
             {/* bus */}

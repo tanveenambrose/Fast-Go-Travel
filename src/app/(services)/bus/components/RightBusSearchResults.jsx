@@ -7,6 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import showToast from "@/utils/showToast";
 import SortBar from "../../components/SortBar";
 import Link from "next/link";
+import Pagination from "../../components/Pagination";
 
 const flights = Array(5).fill({
   airline: "Biman Bangladesh Airlines",
@@ -90,33 +91,7 @@ const RightBusSearchResults = () => {
       ))}
 
       {/* Pagination */}
-      <div className="flex justify-center items-center gap-2 mt-10 flex-wrap">
-        <button
-          className="px-[10px] py-[10px] border rounded-md  text-gray-700 cursor-pointer hover:bg-gray-100"
-          onClick={showToast}
-        >
-          <ChevronLeft size={20} />
-        </button>
-        {[1, 2, 3, 4, 5].map((page) => (
-          <button
-            key={page}
-            onClick={showToast}
-            className={`px-4 py-2 border rounded-md  text-gray-700  ${
-              page == 1
-                ? "bg-[#055BC9] text-white"
-                : "bg-white text-gray-700 hover:bg-gray-100"
-            }`}
-          >
-            {page}
-          </button>
-        ))}
-        <button
-          onClick={showToast}
-          className="px-[10px] py-[10px] border rounded-md  text-gray-700 cursor-pointer hover:bg-gray-100"
-        >
-          <ChevronRight size={20} />
-        </button>
-      </div>
+      <Pagination />
     </div>
   );
 };
