@@ -24,7 +24,7 @@ export default function CtaSection() {
           className="absolute -left-10 top-10"
         />
       </div>
-      <div className="relative w-[100px] h-[100px] lg:w-[166px] lg:h-[166px]">
+      <div className=" relative w-[100px] h-[100px] lg:w-[166px] lg:h-[166px]">
         <Image src="/images/swigly_arrow.png" alt="arrow" fill />
       </div>
 

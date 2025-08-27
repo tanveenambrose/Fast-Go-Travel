@@ -21,7 +21,7 @@ export default function Hero() {
             leisure, and create lasting memories with the perfect getaway
             companion.
           </p>
-        </div>
+        </div>  
         <div className="w-full lg:w-1/2 h-[400px] md:h-[762px] relative z-10">
           <Image src="/images/hero_image.png" alt="beach" fill />
         </div>
