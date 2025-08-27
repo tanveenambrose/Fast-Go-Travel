@@ -28,7 +28,7 @@ export default function WhyTravel() {
   return (
     <section className="py-16 bg-white text-center">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl md:text-5xl font-bold mb-2 text-gray-900">
+        <h2 className=" text-3xl md:text-5xl font-bold mb-2 text-gray-900">
           Why Travel With Us?
         </h2>
         <p className="text-gray-600/60 mt-4 mb-6 md:mb-12 text-base md:text-lg font">
