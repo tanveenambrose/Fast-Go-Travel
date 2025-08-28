@@ -147,13 +147,12 @@ export default function BusTravelerDetails() {
 
       {/* Buttons */}
       <div className="flex flex-col md:flex-row gap-5 md:gap-0 justify-between items-center mt-7">
-        <Button
-          variant="outline"
-          className="rounded-full px-20 md:px-6 py-6 text-lg"
-        >
-          <Link href="/bus">← Back</Link>
+        <Button variant="outline" className="rounded-full py-6 text-lg">
+          <Link href="/bus" className="px-20 md:px-6">
+            ← Back
+          </Link>
         </Button>
-        <Button className="rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white  text-lg py-6">
+        <Button className="rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white  text-lg py-6 hover:from-purple-600 hover:to-purple-700 transition-colors duration-300">
           <Link href="/payment/details" className="px-20 ">
             Continue
           </Link>

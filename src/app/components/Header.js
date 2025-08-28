@@ -90,8 +90,8 @@ export default function Header() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white shadow-md shadow-gray-300">
-      <div className="container px-4 mx-auto sm:px-6 lg:px-8">
+    <nav className="sticky top-0 z-50 w-full bg-white shadow-md ">
+      <div className="max-w-[1440px] mx-auto ">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">

@@ -40,7 +40,7 @@ export default function Footer() {
               className="flex-1 px-2 py-2 text-sm text-black bg-white outline-none sm:px-3 sm:py-2 rounded-l-md sm:text-base"
             />
             <button
-              className="px-2 py-1 text-sm font-semibold cursor-pointer bg-gradient-to-r from-purple-500 to-blue-500 sm:px-4 sm:py-2 rounded-r-md sm:text-base"
+              className="px-2 py-1 text-sm font-semibold cursor-pointer bg-gradient-to-r from-purple-500 to-blue-500 sm:px-4 sm:py-2 rounded-r-md sm:text-base hover:from-purple-600 hover:to-purple-700 transition-colors duration-300"
               onClick={showToast}
             >
               Subscribe

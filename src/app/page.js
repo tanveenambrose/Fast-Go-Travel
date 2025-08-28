@@ -13,11 +13,11 @@ import PopUp from "./components/PopUp";
 
 export default function Home() {
   const [showPopUp, setShowPopUp] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setShowPopUp(true);
-    }, 30000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setShowPopUp(true);
+  //   }, 30000);
+  // }, []);
   return (
     <>
       <Hero />
@@ -32,4 +32,3 @@ export default function Home() {
     </>
   );
 }
-   
