@@ -44,7 +44,7 @@ export default function SearchBar() {
         ))}
 
         {/* Search Button */}
-        <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white flex items-center justify-center px-10 py-4 text-lg hover:opacity-90 transition-all">
+        <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white flex items-center justify-center px-10 py-4 text-lg hover:opacity-90 hover:from-purple-600 hover:to-purple-700 transition-colors duration-300 cursor-pointer">
           <Search className="text-xl" />
         </button>
       </div>

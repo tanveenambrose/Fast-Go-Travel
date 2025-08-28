@@ -24,7 +24,7 @@ export default function SelectBusSeat() {
         Select Seats
       </h1>
       <div className=" flex flex-col items-center justify-center">
-        <Card className="w-full max-w-md border-slate-400 border-[1px]  p-4 rounded-2xl">
+        <Card className="w-full max-w-md shadow-md border-[1px]  p-4 rounded-2xl">
           {/* Header */}
           <div className="flex justify-between text-base font-semibold mt-6 px-4 lg:px-7">
             <div className="text-blue-500  flex flex-col items-center">

@@ -42,7 +42,7 @@ export default function WhoAreWe() {
 
           {/* Button */}
           <button
-            className="px-6 py-3 text-white font-semibold rounded-lg bg-gradient-to-r from-[#0A60F9] to-[#B004FE] flex items-center gap-2 w-fit"
+            className="px-6 py-3 text-white font-semibold rounded-lg bg-gradient-to-r from-[#0A60F9] to-[#B004FE] flex items-center gap-2 w-fit hover:from-purple-600 hover:to-purple-700 transition-colors duration-300 cursor-pointer"
             onClick={showToast}
           >
             View More →

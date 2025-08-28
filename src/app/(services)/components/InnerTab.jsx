@@ -55,7 +55,7 @@ const InnerTab = ({ children }) => {
                 <div className="w-full lg:w-auto mt-3 lg:mt-2">
                   <button
                     onClick={showToast}
-                    className="w-full lg:w-auto flex justify-center items-center gap-2 px-5 py-4 lg:py-6 text-base font-bold text-white bg-gradient-to-r from-[#0A60F9] to-[#B004FE] rounded-lg cursor-pointer lg:px-10 lg:text-lg"
+                    className="w-full lg:w-auto flex justify-center items-center gap-2 px-5 py-4 lg:py-6 text-base font-bold text-white bg-gradient-to-r from-[#0A60F9] to-[#B004FE] rounded-lg cursor-pointer lg:px-10 lg:text-lg hover:from-purple-600 hover:to-purple-700 transition-colors duration-300"
                   >
                     <Search />
                     Search

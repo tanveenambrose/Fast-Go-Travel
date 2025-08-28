@@ -3,10 +3,18 @@ import SortBar from "../../components/SortBar";
 import Image from "next/image";
 import Pagination from "../../components/Pagination";
 import Link from "next/link";
+import { CarTaxiFront, Coffee, WavesLadder, Wifi } from "lucide-react";
 
 // The main HotelCard component. It accepts a 'hotel' object as a prop,
 // which contains all the necessary data to render the card.
 export default function HotelSearchResults() {
+  const activities = [
+    { type: "Free WiFi", icon: <Wifi size={16} /> },
+    { type: "PARKING", icon: <CarTaxiFront size={16} /> },
+    { type: "Pool", icon: <WavesLadder size={16} /> },
+    { type: "Breakfast", icon: <Coffee size={16} /> },
+  ];
+
   const hotels = [
     {
       id: 1,
@@ -17,7 +25,7 @@ export default function HotelSearchResults() {
       price: 899,
       image:
         "https://placehold.co/400x250/99e6ff/000000?text=Grand+Hotel+Dhaka",
-      amenities: ["Free WiFi", "PARKING", "Pool", "Breakfast"],
+      amenities: activities,
       cancellationPolicy: "Only 2 of these rooms left",
       cancellationLink: "FREE cancellation",
     },
@@ -29,7 +37,7 @@ export default function HotelSearchResults() {
       reviews: 3120,
       price: 1250,
       image: "https://placehold.co/400x250/b3d9ff/000000?text=Luxury+Resort",
-      amenities: ["Free WiFi", "PARKING", "Pool", "Breakfast"],
+      amenities: activities,
       cancellationPolicy: "Only 1 of these rooms left",
       cancellationLink: "FREE cancellation",
     },
@@ -41,7 +49,7 @@ export default function HotelSearchResults() {
       reviews: 1890,
       price: 650,
       image: "https://placehold.co/400x250/cce6ff/000000?text=City+View+Hotel",
-      amenities: ["Free WiFi", "PARKING", "Pool"],
+      amenities: activities,
       cancellationPolicy: "Limited rooms available",
       cancellationLink: "FREE cancellation",
     },
@@ -54,7 +62,7 @@ export default function HotelSearchResults() {
       price: 950,
       image:
         "https://placehold.co/400x250/d9ffcc/000000?text=Tropical+Paradise",
-      amenities: ["Free WiFi", "Pool", "Breakfast"],
+      amenities: activities,
       cancellationPolicy: "Only 5 of these rooms left",
       cancellationLink: "FREE cancellation",
     },
@@ -66,7 +74,7 @@ export default function HotelSearchResults() {
       reviews: 5120,
       price: 1800,
       image: "https://placehold.co/400x250/e6ffb3/000000?text=Silver+Sand",
-      amenities: ["Free WiFi", "PARKING", "Pool", "Breakfast", "Private Beach"],
+      amenities: activities,
       cancellationPolicy: "Booking is essential",
       cancellationLink: "No cancellation",
     },
@@ -78,7 +86,7 @@ export default function HotelSearchResults() {
       reviews: 950,
       price: 780,
       image: "https://placehold.co/400x250/fff0b3/000000?text=Dhaka+Regency",
-      amenities: ["Free WiFi", "PARKING", "Breakfast"],
+      amenities: activities,
       cancellationPolicy: "Book now to get 10% off",
       cancellationLink: "FREE cancellation",
     },
@@ -152,7 +160,7 @@ function HotelCard({ hotel }) {
       </div>
 
       {/* Center section: Details and Amenities */}
-      <div className=" px-3 md:px-7 flex-1 flex flex-col justify-between">
+      <div className=" px-9 md:px-7 flex-1 flex flex-col justify-between ">
         <div>
           {/* Hotel Name and Location */}
           <h2 className="text-2xl font-bold text-gray-800 leading-tight mb-1">
@@ -185,16 +193,9 @@ function HotelCard({ hotel }) {
           {/* Amenities icons and text */}
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-gray-700 text-sm mb-3">
             {hotel.amenities.map((amenity, index) => (
-              <div key={index} className="flex items-center">
-                {/* A simple placeholder icon for each amenity */}
-                <svg
-                  className="w-4 h-4 mr-1 text-blue-500"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586z" />
-                </svg>
-                {amenity}
+              <div key={amenity.type} className="flex items-center">
+                <span className="mr-1">{amenity.icon}</span>
+                {amenity.type}
               </div>
             ))}
           </div>

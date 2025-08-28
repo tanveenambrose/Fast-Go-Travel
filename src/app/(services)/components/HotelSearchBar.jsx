@@ -6,7 +6,7 @@ const HotelSearchBar = () => {
       {/* Search Form */}
       <div className="grid grid-cols-1 md:grid-cols-8 gap-4 items-center">
         {/* From Input */}
-        <div className="md:col-span-2 border-b-2 md:border-b-0 md:border-r-2">
+        <div className="md:col-span-2 border-b-2 md:border-b-0 md:border-r-2 px-3">
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Location
           </label>
@@ -23,7 +23,7 @@ const HotelSearchBar = () => {
         </div>
 
         {/* Check in */}
-        <div className="md:col-span-2 border-b-2 md:border-b-0 md:border-r-2">
+        <div className="md:col-span-2 border-b-2 md:border-b-0 md:border-r-2 px-3">
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Check In
           </label>
@@ -40,7 +40,7 @@ const HotelSearchBar = () => {
         </div>
 
         {/* Check Out */}
-        <div className="md:col-span-2 border-b-2 md:border-b-0 md:border-r-2">
+        <div className="md:col-span-2 border-b-2 md:border-b-0 md:border-r-2 px-3">
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Check Out
           </label>
@@ -57,7 +57,7 @@ const HotelSearchBar = () => {
         </div>
 
         {/* Guest Selector */}
-        <div className="md:col-span-2">
+        <div className="md:col-span-2 px-3">
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Guest
           </label>

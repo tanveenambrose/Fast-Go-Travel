@@ -24,7 +24,7 @@ const ReviewBusBooking = () => {
               </h3>
               <div className="flex gap-5 items-center">
                 <Button
-                  className="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full px-4 py-1 text-sm cursor-pointer"
+                  className="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full px-4 py-1 text-sm cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-colors duration-300"
                   onClick={showToast}
                 >
                   View Baggage

@@ -41,7 +41,10 @@ const RightFlightResults = () => {
 
       {/* Flight cards */}
       {flights.map((f, i) => (
-        <Card key={i} className="shadow-md border rounded-xl overflow-hidden">
+        <Card
+          key={i}
+          className="shadow-md border rounded-xl overflow-hidden transition-transform transform hover:scale-[1.01] duration-300"
+        >
           {/* Top Row */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 p-4">
             {/* Airline Info */}
@@ -88,7 +91,7 @@ const RightFlightResults = () => {
                 <p>{f.date}</p>
                 <p>{f.to}</p>
               </div>
-              <div className="flex flex-col items-start md:ml-auto text-left sm:text-center">
+              <div className="flex flex-col items-center md:items-start md:ml-auto text-left sm:text-center">
                 <p className="text-sm text-gray-500">Price</p>
                 <p className="font-bold text-lg mt-1">{f.price}</p>
               </div>
@@ -96,7 +99,7 @@ const RightFlightResults = () => {
 
             {/* Actions */}
             <div className="flex flex-col sm:flex-row md:flex-col items-stretch md:items-end gap-2 mt-3 md:mt-0 w-full sm:w-auto">
-              <Button className="bg-gradient-to-r from-[#0A60F9] to-[#B004FE] text-white font-semibold rounded-lg  py-2 w-full sm:w-auto">
+              <Button className="bg-gradient-to-r from-[#0A60F9] to-[#B004FE] text-white font-semibold rounded-lg  py-2 w-full sm:w-auto hover:from-purple-600 hover:to-purple-700 transition-colors duration-300">
                 <Link href="/flight/details" className="px-5">
                   Book Now
                 </Link>
@@ -159,7 +162,7 @@ const RightFlightResults = () => {
                   <p>{f.terminalFrom}</p>
                   <p>{f.from}</p>
                 </div>
-                <div className="flex flex-col items-center justify-center -ml-16">
+                <div className="flex flex-col items-center justify-center md:-ml-16">
                   <span className="text-gray-500">{f.duration}</span>
                   <Image
                     src="/images/arrow.png"
