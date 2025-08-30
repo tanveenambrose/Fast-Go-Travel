@@ -238,9 +238,9 @@ export default function Header() {
                 variant="blue"
                 asChild
                 className="text-blue-400"
-                onClick={showToast}
+                onClick={() => setIsOpen(false)}
               >
-                <Link href="#">List your Property</Link>
+                <Link href="/list-your-property">List your Property</Link>
               </Button>
 
               <Button variant="outline" className="ml-2" onClick={showToast}>
@@ -307,13 +307,8 @@ export default function Header() {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <Button
-              variant="blue"
-              asChild
-              className="text-blue-400"
-              onClick={showToast}
-            >
-              <Link href="#">List your Property</Link>
+            <Button variant="blue" asChild className="text-blue-400">
+              <Link href="/list-your-property">List your Property</Link>
             </Button>
 
             <Button variant="outline" className="ml-2" onClick={showToast}>

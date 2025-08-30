@@ -26,8 +26,8 @@ const features = [
 
 export default function WhyTravel() {
   return (
-    <section className="py-16 bg-white text-center">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-16 bg-white text-center mb-10">
+      <div className="max-w-[1440px] mx-auto px-4">
         <h2 className=" text-3xl md:text-5xl font-bold mb-2 text-gray-900">
           Why Travel With Us?
         </h2>
@@ -35,11 +35,11 @@ export default function WhyTravel() {
           The best booking platform you can trust
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((item, index) => (
             <div
               key={index}
-              className={`bg-[#f6f6f6] hover:bg-[#e9f4ff] shadow-[#e9f4ff] transition-colors duration-300 rounded-2xl shadow-sm p-6 hover:shadow-lg  ${
+              className={`bg-[#f6f6f6] hover:bg-[#e9f4ff] hover:shadow-[#e9f4ff] transition-colors duration-300 rounded-2xl p-6 hover:shadow-lg cursor-pointer shadow-md  ${
                 index % 2 != 0 ? "md:mt-20" : "md:mb-20"
               }`}
             >
