@@ -183,7 +183,7 @@ export default function VisaForm() {
           </Link>
         </Button>
         <Button className="rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white  text-lg py-6 hover:from-purple-600 hover:to-purple-700 transition-colors duration-300">
-          <Link href="/payment/details" className="px-20 ">
+          <Link href="/payment" className="px-20 ">
             Continue
           </Link>
         </Button>
