@@ -120,7 +120,7 @@ export default function BookingBox() {
       </div>
 
       {/* Reserve button */}
-      <Link href="/payment/details">
+      <Link href="/payment">
         <button className="w-full mt-5 py-3 bg-gradient-to-r from-[#0A60F9] to-[#B004FE] hover:from-purple-600 hover:to-purple-700 transition-colors duration-300 rounded-full font-semibold text-white cursor-pointer">
           Reserve Now
         </button>
