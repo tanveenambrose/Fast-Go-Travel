@@ -243,8 +243,8 @@ export default function Header() {
                 <Link href="/list-your-property">List your Property</Link>
               </Button>
 
-              <Button variant="outline" className="ml-2" onClick={showToast}>
-                <Link href="#">Login</Link>
+              <Button variant="outline" className="ml-2" >
+                <Link href="/signIn">Login</Link>
               </Button>
             </div>
           </div>
@@ -311,8 +311,8 @@ export default function Header() {
               <Link href="/list-your-property">List your Property</Link>
             </Button>
 
-            <Button variant="outline" className="ml-2" onClick={showToast}>
-              <Link href="#">Login</Link>
+            <Button variant="outline" className="ml-2" >
+              <Link href="/signIn">Login</Link>
             </Button>
           </div>
         </div>
