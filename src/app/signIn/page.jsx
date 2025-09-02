@@ -44,7 +44,7 @@ const page = () => {
       </div>
 
       {/* Right Side - Sign In Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center px-8 py-12 bg-white">
+      <div className="w-full lg:w-1/2 flex items-center justify-center px-4 md:px-0 lg:px-8 py-12 bg-white">
         <div className="w-full max-w-md space-y-4">
           {/* Header */}
           <div className="text-center lg:text-left">
