@@ -155,7 +155,7 @@ const page = () => {
 
             {/* Forgot Password */}
             <div className="">
-              <a href="#" className="text- font-semibold text-gray-600 hover:text-[#141522] underline">
+              <a href="/forget-pass" className="text- font-semibold text-gray-600 hover:text-[#141522] underline">
                 Forgot password?
               </a>
             </div>
@@ -172,8 +172,8 @@ const page = () => {
 
             {/* Footer */}
             <div className="text-center text-sm text-gray-500 mt-8">
-              Protected by reCAPTCHA and subject to the Google{" "}
-              <a href="#" className="text-blue-600 hover:text-blue-700">
+            By clicking Create account, I agree that I have read and accepted the
+            <a href="#" className="text-blue-600 hover:text-blue-700">
                 Privacy Policy
               </a>{" "}
               and{" "}
