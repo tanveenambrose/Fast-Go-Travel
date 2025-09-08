@@ -116,7 +116,7 @@ const page = () => {
 
             {/* Forgot Password */}
             <div className="">
-              <a href="#" className="text- font-semibold text-gray-600 hover:text-[#141522] underline">
+              <a href="/forget-pass" className="text- font-semibold text-gray-600 hover:text-[#141522] underline">
                 Forgot password?
               </a>
             </div>
