@@ -86,6 +86,28 @@ export default function TabSystem() {
     },
   ];
 
+  const innerTabs = [
+    { id: 0, name: "One Way" },
+    {
+      id: 1,
+      name: "Round Trip",
+    },
+    { id: 2, name: "Multi City" },
+  ];
+
+  const tourInnerTabs = [
+    {
+      id: 0,
+      name: "Hotel + Flight",
+    },
+    {
+      id: 1,
+      name: "Hotel + Flight + Car",
+    },
+    { id: 2, name: "Flight + Car" },
+    { id: 3, name: "Hotel + Car" },
+  ];
+
   const commonTabClass = `relative flex flex-col lg:flex-row items-center gap-1 lg:gap-2 px-3 py-1 font-semibold transition-all duration-300 text-base lg:text-lg
   text-black rounded-lg`;
 
@@ -116,7 +138,7 @@ export default function TabSystem() {
                 key={item.tab}
                 onClick={() => item.availabe || showToast()}
                 className={({ selected }) =>
-                  `${commonTabClass} ${
+                  `cursor-pointer ${commonTabClass} ${
                     selected
                       ? "bg-[#055BC9] text-white"
                       : "bg-white text-[#989898]"
@@ -144,25 +166,31 @@ export default function TabSystem() {
           <TabPanels className="mt-10">
             {/* flight */}
             <TabPanel>
-              <InnerTab>
+              <InnerTab tabs={innerTabs}>
                 <FlightSearchBar />
               </InnerTab>
             </TabPanel>
             {/* hotel */}
             <TabPanel>
-              <InnerTab>
+              <InnerTab tabs={innerTabs}>
                 <HotelSearchBar />
               </InnerTab>
             </TabPanel>
             {/* bus */}
             <TabPanel>
-              <InnerTab>
+              <InnerTab tabs={innerTabs}>
                 <BusSearchBar />
               </InnerTab>
             </TabPanel>
             {/* visa */}
-            <TabPanel>
+            <TabPanel tabs={innerTabs}>
               <VisaType />
+            </TabPanel>
+            {/* tour */}
+            <TabPanel>
+              <InnerTab tabs={tourInnerTabs}>
+                <HotelSearchBar />
+              </InnerTab>
             </TabPanel>
           </TabPanels>
         </TabGroup>

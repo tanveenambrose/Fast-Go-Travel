@@ -1,23 +1,13 @@
 import { useState } from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import showToast from "@/utils/showToast";
-import { Calendar1, ChevronDown, MapPin, Search, User } from "lucide-react";
+import { Search } from "lucide-react";
 
-const InnerTab = ({ children }) => {
+const InnerTab = ({ children, tabs }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const tabs = [
-    { id: 0, name: "One Way", fields: ["from", "to", "depart", "economy"] },
-    {
-      id: 1,
-      name: "Round Trip",
-      fields: ["from", "to", "depart", "return", "economy"],
-    },
-    { id: 2, name: "Multi City", fields: ["from", "to", "depart", "economy"] },
-  ];
-
   return (
-    <div className=" mx-auto mt-5 flex justify-center">
+    <div className="mx-auto mt-5 flex justify-center">
       <div className="w-full">
         <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
           {/* Tab Headers */}
@@ -26,7 +16,7 @@ const InnerTab = ({ children }) => {
               <Tab
                 key={tab.id}
                 className={({ selected }) =>
-                  `relative flex items-center gap-2 px-3 py-1 transition-all text-sm md:text-base ${
+                  `relative flex items-center gap-2 px-3 py-1 transition-all text-sm md:text-base cursor-pointer ${
                     selected ? "text-blue-600" : "text-black"
                   }`
                 }

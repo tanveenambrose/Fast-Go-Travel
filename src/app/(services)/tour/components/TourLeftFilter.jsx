@@ -4,7 +4,14 @@ import { useState } from "react";
 import { Slider } from "@/components/ui/slider";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
-import { Plane, PlaneTakeoff } from "lucide-react";
+import {
+  Cake,
+  Earth,
+  Plane,
+  PlaneTakeoff,
+  TreePalm,
+  Users,
+} from "lucide-react";
 
 export default function TourLeftFilter() {
   const [price, setPrice] = useState([100000]);
@@ -16,7 +23,7 @@ export default function TourLeftFilter() {
 
       {/* Price */}
       <div>
-        <label className="text-sm font-medium">Price</label>
+        <label className="text-base font-medium">Price</label>
         <Slider
           value={price}
           onValueChange={setPrice}
@@ -25,20 +32,28 @@ export default function TourLeftFilter() {
           step={1000}
           className="mt-2"
         />
-        <p className="text-xs text-gray-600 mt-1">
-          ৳0 – ৳{price[0].toLocaleString()}
+        <p className="text-base text-gray-600 mt-2 flex items-center justify-between">
+          <span>৳0</span> <span>৳{price[0].toLocaleString()}</span>
         </p>
       </div>
 
       {/* Theme */}
       <div>
-        <label className="text-sm font-medium">Theme</label>
+        <label className="text-base font-medium">Theme</label>
         <div className="flex flex-col gap-2 mt-2">
-          {["Europe", "Desert", "Beach"].map((theme) => (
-            <div key={theme} className="flex items-center gap-2">
-              <Checkbox id={theme} />
-              <label htmlFor={theme} className="text-sm">
-                {theme}
+          {[
+            { location: "Europe", logo: <Earth color="#989898" size={17} /> },
+            { location: "Desert", logo: <Cake color="#989898" size={17} /> },
+            { location: "Beach", logo: <TreePalm color="#989898" size={17} /> },
+          ].map((theme) => (
+            <div key={theme.location} className="flex items-center gap-2">
+              <Checkbox id={theme.location} />
+              <label
+                htmlFor={theme.location}
+                className="text-base flex items-center gap-2"
+              >
+                <span>{theme.logo}</span>
+                <span>{theme.location}</span>
               </label>
             </div>
           ))}
@@ -47,18 +62,21 @@ export default function TourLeftFilter() {
 
       {/* Package Type */}
       <div>
-        <label className="text-sm font-medium">Package type</label>
+        <label className="text-base font-medium">Package type</label>
         <div className="flex items-center gap-2 mt-2">
           <Checkbox id="group" />
-          <label htmlFor="group" className="text-sm">
-            Group
+          <label htmlFor="group" className="text-base flex items-center gap-2">
+            <span>
+              <Users color="#989898" size={17} />
+            </span>
+            <span>Group</span>
           </label>
         </div>
       </div>
 
       {/* Duration */}
       <div>
-        <label className="text-sm font-medium">Duration</label>
+        <label className="text-base font-medium">Duration</label>
         <Slider
           value={duration}
           onValueChange={setDuration}
@@ -72,7 +90,7 @@ export default function TourLeftFilter() {
 
       {/* Flight */}
       <div>
-        <label className="text-sm font-medium">Flight</label>
+        <label className="text-base font-medium">Flight</label>
         <div className="flex flex-col gap-2 mt-2">
           <Button
             variant="outline"

@@ -27,13 +27,7 @@ export default function TourPackages() {
           "Package with Tour Manager",
           "All-Inclusive Package",
         ].map((tab, i) => (
-          <Button
-            key={i}
-            variant={i === 1 ? "default" : "outline"}
-            className={`rounded-full px-4 ${
-              i === 1 ? "bg-blue-500 text-white" : ""
-            }`}
-          >
+          <Button key={i} variant="blue" className={`rounded-full px-4 `}>
             {tab}
           </Button>
         ))}
@@ -46,7 +40,7 @@ export default function TourPackages() {
             key={idx}
             className="shadow-md rounded-2xl overflow-hidden px-2 py-2 transition-transform transform hover:scale-[1.01] duration-300"
           >
-            <div className="w-full aspect-[4/3] relative rounded-md overflow-hidden">
+            <div className="w-full aspect-[4/3] relative rounded-md overflow-hidden px-2">
               <Image
                 src={pkg.image}
                 alt={pkg.title}
@@ -54,12 +48,17 @@ export default function TourPackages() {
                 className="object-cover"
               />
             </div>
-            <CardContent className="p-4">
-              <p className="text-xs text-blue-600 font-medium mb-1">
-                {pkg.nights}
-              </p>
-              <h3 className="font-semibold text-lg">{pkg.title}</h3>
+            <CardContent className="px-2 pb-4">
+              <h3 className="font-semibold text-lg md:text-2xl">{pkg.title}</h3>
               <p className="text-xs text-gray-500 mt-1">{pkg.details}</p>
+
+              <Image
+                src="/images/tour_logos.svg"
+                alt="logos"
+                width={157}
+                height={24}
+                className="my-2"
+              />
 
               <ul className="flex flex-wrap gap-2 text-xs text-gray-700 mt-2">
                 {pkg.highlights.map((item, i) => (
@@ -69,8 +68,14 @@ export default function TourPackages() {
                 ))}
               </ul>
 
-              <p className="text-xs text-gray-400 mt-3">Starting From</p>
-              <p className="font-semibold text-lg text-gray-800">{pkg.price}</p>
+              <div className="flex items-center justify-between my-3">
+                <p className="text-base font-semibold text-gray-400">
+                  Starting From
+                </p>
+                <p className="font-semibold text-lg text-gray-800">
+                  {pkg.price}
+                </p>
+              </div>
 
               <Link href="/tour/packages">
                 <Button className="w-full mt-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white  text-lg py-6 hover:from-purple-600 hover:to-purple-700 transition-colors duration-300 cursor-pointer">
