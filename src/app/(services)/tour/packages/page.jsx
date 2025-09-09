@@ -1,5 +1,11 @@
+import PackagesHero from "../components/PackagesHero";
+
 const PackagePage = () => {
-  return <div>packages</div>;
+  return (
+    <>
+      <PackagesHero />
+    </>
+  );
 };
 
 export default PackagePage;
