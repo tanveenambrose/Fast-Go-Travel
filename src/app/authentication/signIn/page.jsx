@@ -51,7 +51,7 @@ const page = () => {
             <h2 className="text-4xl font-semibold text-[#141522] mb-2">Sign In</h2>
             <p className="text-[#141522]">
               New user? 
-               <a href="/signup" className="text-[#066CCB] hover:text-blue-700 font-medium pl-2">
+               <a href="/authentication/signup" className="text-[#066CCB] hover:text-blue-700 font-medium pl-2">
                  Create an account
               </a>
             </p>
@@ -116,7 +116,7 @@ const page = () => {
 
             {/* Forgot Password */}
             <div className="">
-              <a href="/forget-pass" className="text- font-semibold text-gray-600 hover:text-[#141522] underline">
+              <a href="/authentication/forget-pass" className="cursor-pointer text- font-semibold text-gray-600 hover:text-[#141522] underline">
                 Forgot password?
               </a>
             </div>
@@ -124,7 +124,7 @@ const page = () => {
             {/* Sign In Button */}
             <button
               type="submit"
-              className="w-full bg-[#066CCB] hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-medium transition-colors"
+              className=" cursor-pointer w-full bg-[#066CCB] hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-medium transition-colors"
             >
               Sign In
             </button>
@@ -143,7 +143,7 @@ const page = () => {
             <div className="space-y-3">
               <button
                 type="button"
-                className="w-full py-3 px-4 border border-gray-300 rounded-lg hover:bg-gray-50 flex items-center justify-center space-x-3 bg-white transition-colors"
+                className= "cursor-pointer w-full py-3 px-4 border border-gray-300 rounded-lg hover:bg-gray-50 flex items-center justify-center space-x-3 bg-white transition-colors"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24">
                   <path
@@ -168,7 +168,7 @@ const page = () => {
 
               <button
                 type="button"
-                className="w-full py-3 px-4 border border-gray-300 rounded-lg hover:bg-gray-50 flex items-center justify-center space-x-3 bg-white transition-colors"
+                className="cursor-pointer w-full py-3 px-4 border border-gray-300 rounded-lg hover:bg-gray-50 flex items-center justify-center space-x-3 bg-white transition-colors"
               >
                 <svg className="w-5 h-5" fill="#1877F2" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
