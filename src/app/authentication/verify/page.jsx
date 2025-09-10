@@ -1,46 +1,9 @@
-"use client"
-import { RiArrowGoBackFill } from "react-icons/ri";
-import { useState } from "react"
+"use client";
+
+import { useState } from "react";
 
 export default function PasswordResetPage() {
-  const [code, setCode] = useState(["", "", "", ""])
-
-  const handleCodeChange = (index, value) => {
-    if (value.length <= 1 && /^\d*$/.test(value)) {
-      const newCode = [...code]
-      newCode[index] = value
-      setCode(newCode)
-
-      // Auto-focus next input
-      if (value && index < 3) {
-        const nextInput = document.getElementById(`code-${index + 1}`)
-        nextInput?.focus()
-      }
-    }
-  }
-
-  const handleKeyDown = (index, e) => {
-    if (e.key === "Backspace" && !code[index] && index > 0) {
-      const prevInput = document.getElementById(`code-${index - 1}`)
-      prevInput?.focus()
-    }
-  }
-
-  const handlePaste = (e) => {
-    e.preventDefault()
-    const pastedData = e.clipboardData.getData("text").slice(0, 4)
-    const newCode = pastedData.split("").slice(0, 4)
-
-    while (newCode.length < 4) {
-      newCode.push("")
-    }
-
-    setCode(newCode)
-
-    const nextEmptyIndex = newCode.findIndex((digit) => !digit)
-    const focusIndex = nextEmptyIndex === -1 ? 3 : nextEmptyIndex
-    document.getElementById(`code-${focusIndex}`)?.focus()
-  }
+  const [selectedMethod, setSelectedMethod] = useState("email");
 
   return (
     <div className="max-w-[1300px] xl:min-h-[750px] mx-auto  flex">
@@ -69,57 +32,160 @@ export default function PasswordResetPage() {
               FastGo
             </h2>
             <p className="  max-w-xl">
-              Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-              placeat facere possimus, omnis voluptas assumenda est.
+              Nam libero tempore, cum soluta nobis est eligendi optio cumque
+              nihil impedit quo minus id quod maxime placeat facere possimus,
+              omnis voluptas assumenda est.
             </p>
           </div>
         </div>
       </div>
 
       {/* Right Side - Password Reset Form */}
-      <div className="flex-1 bg-white flex flex-col py-16 justify-center px-2 lg:px-12">
-        <div className="max-w-md mx-auto  w-full">
+      <div className="flex-1 bg-white flex items-center justify-center px-8 lg:px-12">
+        <div className="w-full max-w-md">
           {/* Icon */}
-          <div className="w-14 h-14 bg-blue-500 rounded-xl flex items-center justify-center mb-8 ">
-            <p className="text-2xl text-white ">|**</p>
+          <div className="mb-8">
+            <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto">
+              <svg
+                className="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+            </div>
           </div>
 
           {/* Title */}
-          <h1 className="text-3xl font-bold text-[#141522] text-start mb-2">Update Your Password</h1>
-
-          {/* Subtitle */}
-          <p className="text-[#141522] text-start font-semibold mb-8">Enter the code we sent to the email address ending in -30</p>
-
-          {/* Code Input */}
-          <div className="flex justify-start gap-4 mb-8">
-            {code.map((digit, index) => (
-              <input
-                key={index}
-                id={`code-${index}`}
-                type="text"
-                value={digit}
-                onChange={(e) => handleCodeChange(index, e.target.value)}
-                onKeyDown={(e) => handleKeyDown(index, e)}
-                className="w-16 h-16 text-center text-2xl font-semibold border-1 border-[#F5F5F7] rounded-lg focus:border-[#066CCB] focus:outline-none transition-colors"
-                maxLength={1}
-              />
-            ))}
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              Verify Your Identity
+            </h3>
+            <p className="text-gray-600">
+              Select a way to receive the verification code
+            </p>
           </div>
 
-          {/* Didn't receive code link */}
-          <div className="text-start mb-4 cursor-pointer">
-            <button className="text-[#525255] hover:text-gray-800 transition-colors">Didn't receive your code</button>
+          {/* Verification Options */}
+          <div className="space-y-4 mb-8">
+            {/* Email Option */}
+            <div
+              className={`border-2 rounded-lg p-4 cursor-pointer transition-colors ${
+                selectedMethod === "email"
+                  ? "border-blue-600 bg-blue-50"
+                  : "border-gray-200 hover:border-gray-300"
+              }`}
+              onClick={() => setSelectedMethod("email")}
+            >
+              <div className="flex items-center space-x-3">
+                <div
+                  className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
+                    selectedMethod === "email"
+                      ? "border-blue-600"
+                      : "border-gray-300"
+                  }`}
+                >
+                  {selectedMethod === "email" && (
+                    <div className="w-2.5 h-2.5 bg-blue-600 rounded-full"></div>
+                  )}
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center space-x-2">
+                    <svg
+                      className="w-5 h-5 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span className="font-medium text-gray-900">
+                      Email code to
+                    </span>
+                  </div>
+                  <p className="text-gray-600 mt-1">nedusoft@gmail.com</p>
+                </div>
+              </div>
+            </div>
+
+            {/* SMS Option */}
+            <div
+              className={`border-2 rounded-lg p-4 cursor-pointer transition-colors ${
+                selectedMethod === "sms"
+                  ? "border-blue-600 bg-blue-50"
+                  : "border-gray-200 hover:border-gray-300"
+              }`}
+              onClick={() => setSelectedMethod("sms")}
+            >
+              <div className="flex items-center space-x-3">
+                <div
+                  className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
+                    selectedMethod === "sms"
+                      ? "border-blue-600"
+                      : "border-gray-300"
+                  }`}
+                >
+                  {selectedMethod === "sms" && (
+                    <div className="w-2.5 h-2.5 bg-blue-600 rounded-full"></div>
+                  )}
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center space-x-2">
+                    <svg
+                      className="w-5 h-5 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span className="font-medium text-gray-900">
+                      Text code to number in -30
+                    </span>
+                  </div>
+                  <p className="text-gray-600 mt-1 text-sm">
+                    Our text are free, but some service providers may apply
+                    usage charges in certain cases.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Back button */}
-          <a href="/authentication/forget-pass">
-          <button className="flex items-center justify-center gap-2 text-[#6E6E71] hover:text-gray-800 transition-colors">
-          <RiArrowGoBackFill />
-            back
+          {/* Continue Button */}
+         <a href="/authentication/code">
+         <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors mb-6">
+            Continue
           </button>
-          </a>
+         </a>
+
+          {/* Sign In Link */}
+          <div className="text-center">
+            <a
+              href="#"
+              className="text-blue-600 hover:text-blue-700 font-medium"
+            >
+              Sign In to a different account
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
