@@ -155,7 +155,7 @@ const page = () => {
 
             {/* Forgot Password */}
             <div className="">
-              <a href="/forget-pass" className="text- font-semibold text-gray-600 hover:text-[#141522] underline">
+              <a href="/authentication/forget-pass" className="text- font-semibold text-gray-600 hover:text-[#141522] underline">
                 Forgot password?
               </a>
             </div>
@@ -163,7 +163,7 @@ const page = () => {
             {/* Sign In Button */}
             <button
               type="submit"
-              className="w-full bg-[#F5F5F7] hover:bg-[#066CCB] hover:text-white text-[#9C9CA4] py-3 px-4 rounded-lg font-medium transition-colors"
+              className= "cursor-pointer w-full bg-[#F5F5F7] hover:bg-[#066CCB] hover:text-white text-[#9C9CA4] py-3 px-4 rounded-lg font-medium transition-colors"
             >
               Create
             </button>
