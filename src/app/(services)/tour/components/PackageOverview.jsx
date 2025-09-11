@@ -1,6 +1,6 @@
 export default function PackageOverview() {
   return (
-    <div className="w-full  rounded-xl shadow-md p-6">
+    <div className="w-full rounded-xl shadow-md p-3 md:p-6">
       {/* Title */}
       <h2 className="text-lg font-semibold text-gray-900 mb-4 border-b border-gray-200 pb-2">
         Package Overview
