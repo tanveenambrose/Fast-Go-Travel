@@ -23,8 +23,12 @@ export default function Header() {
 
   const navLinks = [
     { name: "Home", href: "/", isAvailable: true },
-    { name: "eSIM", href: "/esim", isAvailable: false },
     { name: "Packages", href: "/packages", isAvailable: false },
+    { name: "Flight", href: "/flight", isAvailable: true },
+    { name: "Hotel", href: "/hotel", isAvailable: true },
+    { name: "Bus", href: "/bus", isAvailable: true },
+    { name: "Visa", href: "/visa", isAvailable: true },
+    { name: "Tour", href: "/tour", isAvailable: true },
   ];
 
   const languages = [
@@ -52,29 +56,6 @@ export default function Header() {
       title: "JP",
       href: "#",
       description: "Japanese language modal",
-    },
-  ];
-
-  const services = [
-    {
-      title: "Flight",
-      href: "/flight",
-      description: "Book domestic and international flights",
-    },
-    {
-      title: "Hotel",
-      href: "/hotel",
-      description: "Find and book hotel rooms",
-    },
-    {
-      title: "Bus",
-      href: "/bus",
-      description: "Bus in multiple cities",
-    },
-    {
-      title: "Visa",
-      href: "/visa",
-      description: "Find your visa",
     },
   ];
 
@@ -144,31 +125,6 @@ export default function Header() {
                 </Link>
               );
             })}
-            <NavigationMenu viewport={false}>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base ml-0">
-                    Services
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[300px] gap-4">
-                      <li>
-                        {services.map((item) => (
-                          <NavigationMenuLink key={item.title} asChild>
-                            <Link href={item.href}>
-                              <div className="font-medium">{item.title}</div>
-                              <div className="text-muted-foreground">
-                                {item.description}
-                              </div>
-                            </Link>
-                          </NavigationMenuLink>
-                        ))}
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
           </div>
 
           {/* Mobile menu */}
@@ -221,13 +177,6 @@ export default function Header() {
                   </Link>
                 );
               })}
-              <Link
-                href="/flight"
-                onClick={() => setIsOpen(false)}
-                className="text-base font-semibold transition-all duration-200 hover:text-opacity-80 p-2 rounded-md shadow-gray-300 shadow-lg flex items-center justify-center"
-              >
-                Services
-              </Link>
             </div>
 
             <div className="h-[2px] bg-gray-300 mb-5" />
@@ -243,7 +192,7 @@ export default function Header() {
                 <Link href="/list-your-property">List your Property</Link>
               </Button>
 
-              <Button variant="outline" className="ml-2" >
+              <Button variant="outline" className="ml-2">
                 <Link href="/signIn">Login</Link>
               </Button>
             </div>
@@ -311,7 +260,7 @@ export default function Header() {
               <Link href="/list-your-property">List your Property</Link>
             </Button>
 
-            <Button variant="outline" className="ml-2" >
+            <Button variant="outline" className="ml-2">
               <Link href="/authentication/signIn">Login</Link>
             </Button>
           </div>
