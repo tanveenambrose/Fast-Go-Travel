@@ -1,6 +1,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import PackageOverview from "./PackageOverview";
 import ItineraryTimeline from "./ItineraryTimeline";
+import InclusionsExclusions from "./InclusionsExclusions";
+import TermsAndConditions from "./TermsAndConditions";
 
 const PackagesTabs = () => {
   return (
@@ -30,10 +32,10 @@ const PackagesTabs = () => {
         <ItineraryTimeline />
       </TabsContent>
       <TabsContent value="inclusion" className="w-full">
-        <div>Inclusion content goes here</div>
+        <InclusionsExclusions />
       </TabsContent>
       <TabsContent value="info" className="w-full">
-        <div>Additional Info content goes here</div>
+        <TermsAndConditions />
       </TabsContent>
     </Tabs>
   );
