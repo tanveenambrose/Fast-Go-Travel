@@ -23,7 +23,6 @@ export default function Header() {
 
   const navLinks = [
     { name: "Home", href: "/", isAvailable: true },
-    { name: "Packages", href: "/packages", isAvailable: false },
     { name: "Flight", href: "/flight", isAvailable: true },
     { name: "Hotel", href: "/hotel", isAvailable: true },
     { name: "Bus", href: "/bus", isAvailable: true },
