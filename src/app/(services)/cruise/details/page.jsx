@@ -1,5 +1,11 @@
+import CruiseCarousel from "../components/CruiseCarousel";
+
 const CruiseDetails = () => {
-  return <div>/* Your component code here */</div>;
+  return (
+    <div>
+      <CruiseCarousel />
+    </div>
+  );
 };
 
 export default CruiseDetails;
