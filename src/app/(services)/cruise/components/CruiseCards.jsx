@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Star, MapPin, Calendar, Clock } from "lucide-react";
+import Link from "next/link";
 
 export default function CruiseCards({ image }) {
   return (
@@ -51,9 +52,11 @@ export default function CruiseCards({ image }) {
             <span className="text-blue-600">৳45,000</span>
             <span className="text-sm text-gray-500"> / per person</span>
           </p>
-          <Button className="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full">
-            View Details
-          </Button>
+          <Link href="/cruise/details">
+            <Button className="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full">
+              View Details
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
