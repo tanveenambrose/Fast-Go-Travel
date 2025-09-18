@@ -1,10 +1,16 @@
+import CabinCards from "../components/CabinCards";
 import CruiseCarousel from "../components/CruiseCarousel";
+import CruiseOverview from "../components/CruiseOverview";
+import CruisePackageInfo from "../components/CruisePackageInfo";
 
 const CruiseDetails = () => {
   return (
-    <div>
+    <>
       <CruiseCarousel />
-    </div>
+      <CruisePackageInfo />
+      <CruiseOverview />
+      <CabinCards />
+    </>
   );
 };
 

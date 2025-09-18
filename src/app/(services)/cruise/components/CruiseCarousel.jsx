@@ -24,16 +24,16 @@ const CruiseCarousel = () => {
   };
 
   return (
-    <section className="flex w-full h-[600px] gap-2 relative overflow-hidden">
+    <section className="flex w-full h-[600px] gap-1 relative overflow-hidden">
       {images.map((img, i) => (
         <div
           key={i}
           className={`relative transition-all duration-500 ease-in-out 
-            ${i === currentImg ? "flex-[5]" : "flex-[1]"}`}
+            ${i === currentImg ? "flex-[6]" : "flex-[1]"}`}
         >
           <Image src={img} alt={`ship${i}`} fill className="object-cover" />
           {currentImg === i && (
-            <div className="absolute bottom-0 opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out w-full z-10 h-1/3 flex flex-col items-start pl-4 md:pl-26 text-white gap-5">
+            <div className="absolute bottom-0 w-full z-10 h-1/3 flex flex-col items-start pl-4 md:pl-26 text-white gap-5">
               <h1 className="text-3xl md:text-4xl font-bold">
                 Royal Ocean Explorer – Dubai to Maldives
               </h1>
