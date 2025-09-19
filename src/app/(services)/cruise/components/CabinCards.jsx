@@ -79,14 +79,16 @@ export default function CabinCards() {
               )}
             </div>
 
-            <CardContent className="p-5 space-y-4">
+            <CardContent className="px-5 pb-5 space-y-4">
               <div>
-                <h3 className="text-lg font-semibold">{cabin.name}</h3>
+                <h3 className="text-xl md:text-2xl font-semibold">
+                  {cabin.name}
+                </h3>
                 <div className="flex items-center gap-4 text-sm text-gray-500 mt-2">
-                  <span className="flex items-center gap-1">
+                  <span className="flex items-center gap-1 bg-[#E5E7EB] px-3 py-1 rounded-xl">
                     <Users size={14} /> {cabin.guests}
                   </span>
-                  <span className="flex items-center gap-1">
+                  <span className="flex items-center gap-1 bg-[#E5E7EB] px-3 py-1 rounded-xl">
                     <Bed size={14} /> {cabin.size}
                   </span>
                 </div>
@@ -98,7 +100,7 @@ export default function CabinCards() {
                 {cabin.features.map((Icon, index) => (
                   <Icon
                     key={index}
-                    size={25}
+                    size={27}
                     className="text-gray-600 bg-gray-100 p-1 rounded-full"
                   />
                 ))}

@@ -7,7 +7,7 @@ export default function CruisePackageInfo() {
   return (
     <div className="w-full max-w-[1440px] mx-auto bg-white rounded-xl shadow-md flex flex-col md:flex-row items-center md:items-center justify-between p-4 md:p-6 gap-4 my-16 ">
       {/* Left Info Section */}
-      <div className="flex flex-col sm:flex-row gap-5 md:gap-20 flex-1 w-full">
+      <div className="flex flex-col sm:flex-row gap-5 md:gap-20 flex-1 w-1/2 mx-auto">
         {/* Departure Date */}
         <div>
           <p className="text-sm text-gray-500">Departure Date</p>

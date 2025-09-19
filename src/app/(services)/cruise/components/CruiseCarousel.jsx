@@ -24,7 +24,7 @@ const CruiseCarousel = () => {
   };
 
   return (
-    <section className="flex w-full h-[600px] gap-1 relative overflow-hidden">
+    <section className="flex w-full h-[400px] md:h-[600px] gap-1 relative overflow-hidden">
       {images.map((img, i) => (
         <div
           key={i}
@@ -33,14 +33,14 @@ const CruiseCarousel = () => {
         >
           <Image src={img} alt={`ship${i}`} fill className="object-cover" />
           {currentImg === i && (
-            <div className="absolute bottom-0 w-full z-10 h-1/3 flex flex-col items-start pl-4 md:pl-26 text-white gap-5">
-              <h1 className="text-3xl md:text-4xl font-bold">
+            <div className="absolute bottom-0 w-full z-10 h-1/3 flex flex-col items-start pl-4 md:pl-26 text-white gap-1 md:gap-5">
+              <h1 className="text-lg md:text-4xl font-bold">
                 Royal Ocean Explorer – Dubai to Maldives
               </h1>
-              <h3 className="text-xl md:text-3xl font-semibold">
+              <h3 className="text-base md:text-3xl font-semibold">
                 5 Nights 6 Days
               </h3>
-              <div className="flex gap-2 text-lg md:text-2xl">
+              <div className="flex gap-1 md:gap-2 text-xs md:text-2xl">
                 <h3>
                   ⭐ ⭐ ⭐ ⭐ ⭐ <span>4.7</span>
                 </h3>
@@ -68,7 +68,7 @@ const CruiseCarousel = () => {
       </div>
 
       {/* Arrows */}
-      <div className="absolute top-1/2 w-full flex justify-between px-20 -translate-y-1/2">
+      <div className="absolute top-1/2 w-full flex justify-between px-10 md:px-20 -translate-y-1/2">
         <ChevronLeft
           color="white"
           className="bg-[#055BC9] w-10 h-10 rounded-full cursor-pointer"
