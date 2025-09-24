@@ -29,7 +29,6 @@ export default function Header() {
     { name: "Bus", href: "/bus", isAvailable: true },
     { name: "Visa", href: "/visa", isAvailable: true },
     { name: "Tour", href: "/tour", isAvailable: true },
-    { name: "Umrah package", href: "/umrah", isAvailable: true },
   ];
 
   const languages = [
