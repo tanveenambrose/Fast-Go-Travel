@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import PackageOverview from "./PackageOverview";
 import ItineraryTimeline from "./ItineraryTimeline";
+
 import InclusionsExclusions from "./InclusionsExclusions";
 import TermsAndConditions from "./TermsAndConditions";
 
