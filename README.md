@@ -61,7 +61,7 @@
 
 ## Architecture
 
-`````Next.js App Router
+``````Next.js App Router
 ├─ src/app/
 │ ├─ (services)/ # Flight, Hotel, Bus, Visa, Tour, Cruise pages
 │ ├─ authentication/ # Login, Register pages
@@ -70,7 +70,7 @@
 ├─ components/ # Reusable components (buttons, modals, forms)
 ├─ styles/ # TailwindCSS & global styles
 ├─ public/ # Images, icons, static assets
-├─ utils/ # Helper functions```
+├─ utils/ # Helper functions`````
 
 ---
 
@@ -134,5 +134,6 @@ yarn start
 # Lint code
 npm run lint
 # or
-yarn lint
-`````
+yarn lint```
+
+``````
