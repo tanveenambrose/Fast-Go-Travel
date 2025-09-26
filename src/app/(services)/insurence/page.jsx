@@ -1,3 +1,4 @@
+import AvailablePlans from "./components/AvailablePlans";
 import Countries from "./components/Countries";
 import InsuranceCard from "./components/InsuranceCard";
 import { CheckCircle, Headphones } from "lucide-react";
@@ -9,7 +10,7 @@ const Insurence = () => {
             <div className="md:col-span-5">
                 <section className="max-w-2xl mx-auto px-4">
       {/* Title */}
-      <h2 className="text-[44.351px] font-semibold leading-[1.3] text-[#161616]">
+      <h2 className="text-[44.351px] md:text-3xl lg:text-[44.351px] font-semibold leading-[1.3] text-[#161616]">
         International Travel + <br /> Medical Insurance & <br /> Assistance
       </h2>
 
@@ -21,15 +22,15 @@ const Insurence = () => {
       {/* Features */}
       <div className="mt-6 ">
         {/* Card 1 */}
-        <div className="flex items-start space-x-6 mb-6">
+        <div className="flex flex-col lg:flex-row items-center space-x-6 mb-6">
           <div className="flex items-center justify-center w-16 h-16 mt-4 rounded-lg bg-[#E9F4FF]">
-            <img src="/icons/shield-tick.png" className="w-10 h-10" alt="" />
+            <img src="/icons/shield-tick.png" className="w-14 h-14 md:w-10 md:h-10" alt="" />
           </div>
           <div>
-            <h3 className="text-base text-[28px] font-semibold text-[#161616]">
+            <h3 className="text-xl lg:text-[28px] font-semibold text-[#161616]">
               Comprehensive travel + medical <br /> insurance by FastGo
             </h3>
-            <p className="text-[18px] text-gray-500">
+            <p className="text-md lg:text-[18px] text-gray-500">
               Insurance policies covering country-specific visa requirements and
               Schengen Visa Compliant plans.
             </p>
@@ -37,15 +38,15 @@ const Insurence = () => {
         </div>
 
         {/* Card 2 */}
-        <div className="flex items-start space-x-6">
+        <div className="flex flex-col lg:flex-row items-center space-x-6">
           <div className="flex items-center justify-center w-20 h-18 mt-4 rounded-lg bg-[#E9F4FF]">
-            <img src="/icons/headphone-tick.png" className="w-8 h-8" alt="" />
+            <img src="/icons/headphone-tick.png" className="w-12 h-12 md:w-8 md:h-8" alt="" />
           </div>
           <div>
-            <h3 className="text-base text-[28px] font-semibold text-[#161616]">
+            <h3 className="text-xl lg:text-[28px] font-semibold text-[#161616]">
               Global ON-TRIP Assistance for Travel & Medical Needs
             </h3>
-            <p className="text-[18px] text-gray-500 mt-1">
+            <p className="text-md lg:text-[18px] text-gray-500 mt-1">
               24/7 call and on-ground support for ambulance, medical
               consultation, baggage loss/delay, lost baggage recovery and more
             </p>
@@ -64,6 +65,10 @@ const Insurence = () => {
                     <InsuranceCard/>
                 </div>
             </div>
+        </div>
+
+        <div>
+            <AvailablePlans/>
         </div>
         
         </div>

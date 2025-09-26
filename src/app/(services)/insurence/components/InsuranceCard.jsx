@@ -12,8 +12,8 @@ export default function InsuranceCard() {
   const [showPlans, setShowPlans] = useState(false); // toggle state
 
   return (
-    <div className="grid font-manrope gap-6 p-4">
-      <div className="flex flex-col">
+    <div className="grid font-manrope gap-6 md:p-4">
+      <div className="flex flex-col items-center justify-center">
         {/* View Plans Button */}
         <div className="mb-4">
           <button
@@ -135,7 +135,7 @@ export default function InsuranceCard() {
 
                   {/* Title & Price */}
                   <div className="mt-3">
-                    <div className="grid grid-cols-3 grid-rows-2 md:flex items-center justify-between mt-2 px-2 gap-2">
+                    <div className="grid grid-cols-3 grid-rows-2 lg:flex items-center justify-between mt-2 px-2 gap-2">
                       <div className="col-span-2">
                         <h2 className="text-[17.559px] font-semibold">
                           {data.title}
@@ -164,8 +164,8 @@ export default function InsuranceCard() {
                           </p>
                         </div>
                       </div>
-                      <div className="col-span-3 row-span-1 flex justify-center">
-                        <button className="rounded-[100px] bg-[linear-gradient(100deg,#0A60F9_-0.05%,#B004FE_93.06%)] shadow-[0_0.976px_6.829px_0_rgba(0,0,0,0.21)] text-[14px] text-[#FFF] font-semibold md:px-4 md:py-2 px-34 py-4">
+                      <div className="col-span-3 row-span-1 flex  justify-center">
+                        <button className="rounded-[100px] bg-[linear-gradient(100deg,#0A60F9_-0.05%,#B004FE_93.06%)] shadow-[0_0.976px_6.829px_0_rgba(0,0,0,0.21)] text-[14px] text-[#FFF] font-semibold lg:px-4 lg:py-2 px-30 py-4">
                           {data.btnText}
                         </button>
                       </div>
