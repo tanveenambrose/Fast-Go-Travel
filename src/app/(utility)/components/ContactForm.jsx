@@ -57,7 +57,9 @@ export default function ContactForm() {
 
         {/* Right Form */}
         <div>
-          <p className="text-sm text-blue-600 font-semibold">Get in touch</p>
+          <p className="text-sm text-blue-600 font-semibold mb-3">
+            Get in touch
+          </p>
           <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
             Send Message
           </h3>
@@ -91,7 +93,7 @@ export default function ContactForm() {
               <input
                 type="text"
                 placeholder="Phone Number"
-                className="border-b border-gray-300 focus:border-blue-500 focus:outline-none py-2 text-sm text-blue-600"
+                className="border-b border-gray-300 focus:border-blue-500 focus:outline-none py-2 text-sm"
               />
             </div>
 
