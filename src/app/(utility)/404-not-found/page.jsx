@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaArrowLeft } from "react-icons/fa";
 
 const NOtFound = () => {
   return (
@@ -22,7 +23,7 @@ const NOtFound = () => {
         </Link>
       </div>
       <div>
-        <img src="/images/error.png"></img>
+        <img src="/images/error.png" />
       </div>
     </div>
   );
