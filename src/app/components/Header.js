@@ -30,7 +30,7 @@ export default function Header() {
     { name: "Tour", href: "/tour", isAvailable: true },
     { name: "Cruise", href: "/cruise", isAvailable: true },
     { name: "Umrah package", href: "/umrah", isAvailable: true },
-    { name: "Travel Insurance", href: "/insurence", isAvailable: true },
+    { name: "Travel Insurance", href: "/insurance", isAvailable: true },
   ];
 
   const languages = [

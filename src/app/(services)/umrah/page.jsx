@@ -5,7 +5,7 @@ import { FaKaaba } from "react-icons/fa6";
 
 const Umrah = () => {
     return (
-        <>
+        <div div className="max-w-[1440px] mx-auto">
          <div className="lg:grid lg:grid-cols-4 gap-4 p-4 mt-10 flex flex-col">
 
 
@@ -41,7 +41,7 @@ const Umrah = () => {
           </div>        
 
         </div>
-    </>
+    </div>
    
 );
 };

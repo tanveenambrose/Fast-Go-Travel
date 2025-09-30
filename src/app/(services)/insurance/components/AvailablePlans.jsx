@@ -1,7 +1,5 @@
 // components/AvailablePlans.jsx
 
-import { CheckCircle, Phone } from 'lucide-react';
-
 export default function AvailablePlans() {
   return (
     <section className="bg-white text-gray-800 font-manrope">

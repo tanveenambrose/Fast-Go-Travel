@@ -2,7 +2,7 @@ import AvailablePlans from "./components/AvailablePlans";
 import Countries from "./components/Countries";
 import InsuranceCard from "./components/InsuranceCard";
 
-const Insurence = () => {
+const Insurance = () => {
     return (
         <div className="max-w-[1440px] mx-auto">
         <div className=" flex flex-col md:grid md:grid-cols-12 gap-9 px-4 my-20">
@@ -74,4 +74,4 @@ const Insurence = () => {
     );
 };
 
-export default Insurence;
+export default Insurance;

@@ -1,13 +1,13 @@
 "use client";
-
+import Link from "next/link";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { CheckIcon } from "lucide-react";
 import Image from "next/image";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import { useState } from "react";
-import insuranceData from "../data/insurance";
+import insuranceData from "../data/insurance.json";
 
-export default function InsuranceCard() {
+export default function InsuranceCard({data}) {
   const [value, setValue] = useState("all");
   const [showPlans, setShowPlans] = useState(false); // toggle state
 
@@ -165,9 +165,10 @@ export default function InsuranceCard() {
                         </div>
                       </div>
                       <div className="col-span-3 row-span-1 flex  justify-center">
-                        <button className="rounded-[100px] bg-[linear-gradient(100deg,#0A60F9_-0.05%,#B004FE_93.06%)] shadow-[0_0.976px_6.829px_0_rgba(0,0,0,0.21)] text-[14px] text-[#FFF] font-semibold lg:px-4 lg:py-2 px-30 py-4">
-                          {data.btnText}
-                        </button>
+                        <Link href={`/insurance/details/${data.id}`}
+                           className="rounded-[100px] bg-[linear-gradient(100deg,#0A60F9_-0.05%,#B004FE_93.06%)] shadow-[0_0.976px_6.829px_0_rgba(0,0,0,0.21)] text-[14px] text-[#FFF] font-semibold lg:px-4 lg:py-2 px-30 py-4">
+                            {data.btnText}
+                        </Link>
                       </div>
                     </div>
                   </div>
