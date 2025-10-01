@@ -1,0 +1,66 @@
+#root {
+    height: 100%;
+  }
+  html,
+  body {
+    position: relative;
+    height: 100%;
+  }
+  
+  body {
+    
+    font-family:
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+    font-size: 14px;
+    
+    margin: 0;
+    padding: 0;
+  }
+  
+  .swiper {
+    
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+   
+    object-fit: cover;
+  }
+  
+  .swiper {
+    width: 90%;
+    
+    margin:  auto;
+  }
+ 
+  
+  
+  .swiper-button-next,
+.swiper-button-prev {
+  color: red;          /* change arrow color */
+  background: #222;    /* add background */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;     /* change arrow size */
+  font-weight: bold;
+}
