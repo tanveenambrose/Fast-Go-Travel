@@ -1,8 +1,12 @@
+"use client";
+
+import { useState } from "react";
 import AvailablePlans from "./components/AvailablePlans";
 import Countries from "./components/Countries";
 import InsuranceCard from "./components/InsuranceCard";
 
 const Insurance = () => {
+   const [selectedCountries, setSelectedCountries] = useState([]);
     return (
         <div className="max-w-[1440px] mx-auto">
         <div className=" flex flex-col md:grid md:grid-cols-12 gap-9 px-4 my-20">
@@ -60,8 +64,8 @@ const Insurance = () => {
 
             <div className="md:col-span-7 rounded-[17.135px] bg-white shadow-[0_3.213px_32.128px_0_rgba(0,0,0,0.16)]">
                 <div className="p-6">
-                    <Countries/>
-                    <InsuranceCard/>
+                    <Countries onSelectionChange={setSelectedCountries}/>
+                    <InsuranceCard selectedCountries={selectedCountries}/>
                 </div>
             </div>
         </div>

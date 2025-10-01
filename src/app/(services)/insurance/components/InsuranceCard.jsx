@@ -7,21 +7,21 @@ import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import { useState } from "react";
 import insuranceData from "../data/insurance.json";
 
-export default function InsuranceCard({data}) {
+export default function InsuranceCard({ selectedCountries = [] }) {
   const [value, setValue] = useState("all");
   const [showPlans, setShowPlans] = useState(false); // toggle state
 
   return (
-    <div className="grid font-manrope gap-6 md:p-4">
+    <div className="grid font-manrope gap-6">
       <div className="flex flex-col items-center justify-center">
         {/* View Plans Button */}
-        <div className="my-4">
+        <div className="my-8 w-full max-w-md">
           <button
-            onClick={() => setShowPlans(!showPlans)} // toggle everything
+            onClick={() => setShowPlans(!showPlans)}
             className="bg-[linear-gradient(100deg,#0A60F9_-0.05%,#B004FE_93.06%)] 
-            w-full flex items-center justify-center gap-2 rounded-[17.135px] 
-            shadow-[0_3.213px_32.128px_rgba(0,0,0,0.16)] px-6 py-3 font-semibold 
-            text-white text-[16px]"
+              w-full flex items-center justify-center gap-2 rounded-[17.135px] 
+              shadow-[0_3.213px_32.128px_rgba(0,0,0,0.16)] px-6 py-3 font-semibold 
+              text-white text-[16px]"
           >
             {showPlans ? "HIDE PLANS" : "VIEW PLANS"}
             <svg
@@ -164,10 +164,18 @@ export default function InsuranceCard({data}) {
                           </p>
                         </div>
                       </div>
-                      <div className="col-span-3 row-span-1 flex  justify-center">
-                        <Link href={`/insurance/details/${data.id}`}
-                           className="rounded-[100px] bg-[linear-gradient(100deg,#0A60F9_-0.05%,#B004FE_93.06%)] shadow-[0_0.976px_6.829px_0_rgba(0,0,0,0.21)] text-[14px] text-[#FFF] font-semibold lg:px-4 lg:py-2 px-30 py-4">
-                            {data.btnText}
+                      <div className="col-span-3 row-span-1 flex justify-center">
+                        {/* ✅ Updated: pass selectedCountries in query */}
+                        <Link
+                          href={{
+                            pathname: `/insurance/details/${data.id}`,
+                            query: {
+                              countries: selectedCountries.join(","),
+                            },
+                          }}
+                          className="rounded-[100px] bg-[linear-gradient(100deg,#0A60F9_-0.05%,#B004FE_93.06%)] shadow-[0_0.976px_6.829px_0_rgba(0,0,0,0.21)] text-[14px] text-[#FFF] font-semibold lg:px-4 lg:py-2 px-30 py-4"
+                        >
+                          {data.btnText}
                         </Link>
                       </div>
                     </div>

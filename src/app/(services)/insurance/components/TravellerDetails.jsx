@@ -143,20 +143,32 @@ export default function TravellerDetails() {
                   <RadioGroup.Item
                     value="male"
                     className="flex items-center gap-1 border rounded-md px-3 py-1 cursor-pointer"
-                  >
-                    <span>Male</span>
+                  ><Checkbox.Root className="w-4 h-4 border-2 border-[#71B0FF] rounded-full flex items-center justify-center">
+                <Checkbox.Indicator className="text-white w-5 h-5 rounded-full bg-[#71B0FF]">
+                  ✓
+                </Checkbox.Indicator>
+              </Checkbox.Root>
+                    <span className="text-[13.613px] text-[#989898] not-italic font-bold leading-[19.448px]">Male</span>
                   </RadioGroup.Item>
                   <RadioGroup.Item
                     value="female"
                     className="flex items-center gap-1 border rounded-md px-3 py-1 cursor-pointer"
-                  >
-                    <span>Female</span>
+                  ><Checkbox.Root className="w-4 h-4 border-2 border-[#71B0FF] rounded-full flex items-center justify-center">
+                <Checkbox.Indicator className="text-white w-5 h-5 rounded-full bg-[#71B0FF]">
+                  ✓
+                </Checkbox.Indicator>
+              </Checkbox.Root>
+                    <span className="text-[13.613px] text-[#989898] not-italic font-bold leading-[19.448px]">Female</span>
                   </RadioGroup.Item>
                   <RadioGroup.Item
                     value="others"
                     className="flex items-center gap-1 border rounded-md px-3 py-1 cursor-pointer"
-                  >
-                    <span>Others</span>
+                  ><Checkbox.Root className="w-4 h-4 border-2 border-[#71B0FF] rounded-full flex items-center justify-center">
+                <Checkbox.Indicator className="text-white w-5 h-5 rounded-full bg-[#71B0FF]">
+                  ✓
+                </Checkbox.Indicator>
+              </Checkbox.Root>
+                    <span className="text-[13.613px] text-[#989898] not-italic font-bold leading-[19.448px]">Others</span>
                   </RadioGroup.Item>
                 </RadioGroup.Root>
               </div>

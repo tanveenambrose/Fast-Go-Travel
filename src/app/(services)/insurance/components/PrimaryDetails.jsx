@@ -33,9 +33,9 @@ const PersonalDetails = () => {
         <div>
           <label
             htmlFor="mobileNo"
-            className="block text-sm font-medium text-gray-700 mb-1"
+            className="text-[#989898] text-[16px] font-semibold not-italic leading-[160%] mb-1 block"
           >
-            Mobile No.*
+            Mobile No. <span className="text-[#EB2026] ">*</span>
           </label>
           <div className="flex rounded-md shadow-sm">
             <select
@@ -65,9 +65,9 @@ const PersonalDetails = () => {
         <div>
           <label
             htmlFor="emailId"
-            className="block text-sm font-medium text-gray-700 mb-1"
+            className="text-[#989898] text-[16px] font-semibold not-italic leading-[160%] mb-1 block"
           >
-            Email ID*
+            Email ID <span className="text-[#EB2026] ">*</span>
           </label>
           <input
             type="email"
@@ -84,9 +84,9 @@ const PersonalDetails = () => {
       <div className="mb-6">
         <label
           htmlFor="emergencyMobileNo"
-          className="block text-sm font-medium text-gray-700 mb-1"
+          className="text-[#989898] text-[16px] font-semibold not-italic leading-[160%] mb-1 block"
         >
-          Emergency Mobile No.*
+          Emergency Mobile No. <span className="text-[#EB2026] ">*</span>
         </label>
         <div className="flex rounded-md shadow-sm">
           <select
@@ -113,9 +113,9 @@ const PersonalDetails = () => {
       </div>
 
       {/* Note */}
-      <div className="bg-blue-50 p-4 rounded-md mb-6">
-        <p className="font-semibold text-blue-800 mb-1">Please note</p>
-        <p className="text-sm text-blue-700">
+      <div className="bg-[#E9F4FF] p-4 rounded-md mb-6">
+        <p className="text-[#161616] text-[18px] font-bold not-italic leading-normal">Please note</p>
+        <p className="text-[#161616] text-[14px] font-normal not-italic leading-normal">
           Passport number can be added post payment to include it in the policy
           document
         </p>
@@ -131,7 +131,7 @@ const PersonalDetails = () => {
           checked={declaration1}
           onChange={(e) => setDeclaration1(e.target.checked)}
         />
-        <label htmlFor="declaration1" className="ml-2 text-sm text-gray-900">
+        <label htmlFor="declaration1" className="text-[#989898] text-[14px] font-normal not-italic leading-normal ml-2">
           I declare and submit that I/we are Indian residents between 6 months
           to 70 years of age, journey originates in India & due consent for
           insurance has been obtained from all travellers listed.
@@ -147,13 +147,13 @@ const PersonalDetails = () => {
           checked={declaration2}
           onChange={(e) => setDeclaration2(e.target.checked)}
         />
-        <label htmlFor="declaration2" className="ml-2 text-sm text-gray-900">
+        <label htmlFor="declaration2" className="text-[#989898] text-[14px] font-normal not-italic leading-normal ml-2">
           I declare all travellers are in good health, fit for travel and aware
           pre-existing medical conditions or it's complications aren't covered.
         </label>
       </div>
 
-      <p className="text-xs text-gray-500">
+      <p className="text-[#989898] text-[14px] font-normal not-italic leading-normal">
         FastGo hereby disclaims warranties of any kind, whether express or
         implied, including the warranty of title, merchantability,
         non-infringement and fitness for a particular purpose with regard to the

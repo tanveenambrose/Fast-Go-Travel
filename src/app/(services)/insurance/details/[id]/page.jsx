@@ -1,18 +1,15 @@
+"use client";
 import insuranceData from "../../data/insurance.json";
 import TravellerForm from "../../components/TravellerForm";
 
-export default async function  InsuranceDetails({ params }) {
+export default async function InsuranceDetails({ params, searchParams }) {
   const { id } = await params;
+ const awaitedSearchParams = await searchParams;
 
-  if (!id) {
-    console.error("params.id is undefined", params);
-    return (
-      <div className="p-6 text-center text-red-600 font-semibold">
-        Invalid parameters
-      </div>
-    );
-  }
+  // ✅ Get countries from query string, fallback to empty array
+  const countries = awaitedSearchParams?.countries?.split(",") || [];
 
+  // ✅ Find the correct plan
   const plan = insuranceData.find((item) => String(item.id) === String(id));
 
   if (!plan) {
@@ -25,7 +22,8 @@ export default async function  InsuranceDetails({ params }) {
 
   return (
     <div className="max-w-6xl mx-auto py-8 font-manrope">
-      <TravellerForm plan={plan} />
+      {/* Pass selectedCountries to TravellerForm */}
+      <TravellerForm plan={plan} selectedCountries={countries} />
     </div>
   );
 }

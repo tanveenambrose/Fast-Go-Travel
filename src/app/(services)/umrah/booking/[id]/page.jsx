@@ -10,6 +10,8 @@ import { useState } from "react";
 import {
   Phone,
 } from "lucide-react";
+import { Button } from "@headlessui/react";
+import Link from "next/link";
 
 export default function BookingPage({ params }) {
   const id = Number(params.id);
@@ -206,12 +208,12 @@ export default function BookingPage({ params }) {
 
               {/* Buttons */}
               <div className="flex gap-4 justify-end pt-4">
-                <button
+                <Button
                   type="button"
                   className="px-10 font-semibold py-2 border rounded-lg text-[#055BC9] bg-[#E9F4FF]"
                 >
-                  Back
-                </button>
+                  <Link href="/umrah" className="flex items-center gap-2">Back</Link>
+                </Button>
                 <button
                   type="submit"
                   className="px-8 py-2 font-bold bg-[#E4E6E8] hover:bg-blue-700 hover:text-white text-[#989898] rounded-lg"
