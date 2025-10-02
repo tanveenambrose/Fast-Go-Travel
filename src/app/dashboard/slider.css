@@ -21,7 +21,7 @@
   }
   
   .swiper {
-    
+    width: auto;
     height: 100%;
   }
   
@@ -43,7 +43,7 @@
   }
   
   .swiper {
-    width: 90%;
+    
     
     margin:  auto;
   }
@@ -52,8 +52,8 @@
   
   .swiper-button-next,
 .swiper-button-prev {
-  color: red;          /* change arrow color */
-  background: #222;    /* add background */
+  color: red;          
+  background: #222;   
   border-radius: 50%;
   width: 40px;
   height: 40px;
