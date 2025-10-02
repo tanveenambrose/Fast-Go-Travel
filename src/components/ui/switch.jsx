@@ -26,4 +26,4 @@ function Switch({
   );
 }
 
-export { Switch }
+export { Switch };
