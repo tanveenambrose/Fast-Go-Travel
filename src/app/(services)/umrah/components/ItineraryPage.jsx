@@ -65,7 +65,7 @@ export default function ItineraryPage({ data }) {
   };
 
   return (
-    <div className="lg:grid lg:grid-cols-12 lg:gap-6">
+    <div className="max-w-[1440px] mx-auto mt-16 lg:grid lg:grid-cols-12 lg:gap-6 mb-10 md:mb-20">
       {/* Day 1-6 Section */}
       <div className="lg:col-span-9 border-2 border-gray-200 rounded-2xl mt-4 lg:mx-10">
         <div className="max-w-6xl mx-auto px-4 py-10">
@@ -252,10 +252,10 @@ export default function ItineraryPage({ data }) {
           <p className="text-gray-500 text-sm mb-4">per person</p>
 
           <Link href={`/umrah/booking/${data?.id}`}>
-          <button className="w-full py-2.5 rounded-lg text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:opacity-90 transition">
-            Get Started
-          </button>
-         </Link>
+            <button className="w-full py-2.5 rounded-lg text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:opacity-90 transition">
+              Get Started
+            </button>
+          </Link>
         </div>
       </div>
     </div>
