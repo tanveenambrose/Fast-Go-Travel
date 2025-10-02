@@ -1,10 +1,9 @@
-"use client";
 import insuranceData from "../../data/insurance.json";
 import TravellerForm from "../../components/TravellerForm";
 
 export default async function InsuranceDetails({ params, searchParams }) {
   const { id } = await params;
- const awaitedSearchParams = await searchParams;
+  const awaitedSearchParams = await searchParams;
 
   // ✅ Get countries from query string, fallback to empty array
   const countries = awaitedSearchParams?.countries?.split(",") || [];
@@ -21,7 +20,7 @@ export default async function InsuranceDetails({ params, searchParams }) {
   }
 
   return (
-    <div className="max-w-6xl mx-auto py-8 font-manrope">
+    <div className="max-w-6xl mx-auto py-8 font-manrope my-10">
       {/* Pass selectedCountries to TravellerForm */}
       <TravellerForm plan={plan} selectedCountries={countries} />
     </div>
