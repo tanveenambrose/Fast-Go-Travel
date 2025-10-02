@@ -8,19 +8,10 @@ import { MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link"; // ✅ import Link
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
 
 const PackageCard = ({ data }) => {
   return (
-    <motion.div
-      className="grid md:grid-cols-6 md:grid-rows-4 grid-rows-[auto_auto_auto] grid-cols-12 gap-4 bg-white border rounded-xl shadow-sm pt-4 pb-4 pl-4 pr-4 mb-6 cursor-pointer"
-      whileHover={{
-        scale: 1.02,
-        boxShadow: "0px 8px 25px rgba(0,0,0,0.15)",
-      }}
-      whileTap={{ scale: 0.9 }}
-      transition={{ type: "spring", stiffness: 250, damping: 15 }}
-    >
+    <div className="grid md:grid-cols-6 md:grid-rows-4 grid-rows-[auto_auto_auto] grid-cols-12 gap-4 bg-white border rounded-xl shadow-sm pt-4 pb-4 pl-4 pr-4 mb-6 cursor-pointer hover:scale-[1.01] transition-transform duration-300">
       {/* Image Section */}
       <div className="md:row-span-4 md:col-span-2 col-span-12 row-span-1">
         <div className="relative md:min-h-[250px] min-h-[350px] rounded-lg overflow-hidden lg:w-[230px] lg:h-[150px] xl:w-[280px] xl:h-[180px]">
@@ -92,7 +83,7 @@ const PackageCard = ({ data }) => {
           </Button>
         </Link>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
