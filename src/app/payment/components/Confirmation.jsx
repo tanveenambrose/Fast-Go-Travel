@@ -12,8 +12,10 @@ const Confirmation = () => {
             <h1 className="text-3xl font-bold text-[#000] mb-6">Thank You For Your Purchase</h1>
             <p className="text-[#989898] text-lg mb-8">Order #123RGR231567Y Confirmed</p>
   
+
+  
             <div className="space-y-4 mb-3">
-            <a href="/">
+            <a href="/dashboard">
             <button className="w-full max-w-lg rounded text-sm mx-auto block bg-[#055BC9] text-white py-3 px-7   ">
                 Go To Dashboard
               </button>
