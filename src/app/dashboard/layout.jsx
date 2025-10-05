@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { MdKeyboardArrowRight } from "react-icons/md";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Mousewheel, Keyboard } from "swiper/modules";
@@ -24,13 +25,18 @@ const layout = ({ children }) => {
   return (
     <div className="relative">
       <img
-        className="h-auto lg:h-52 w-full absolute"
+        className="h-40 lg:h-52 w-full absolute"
         src="/images/dashtop.png"
         alt=""
       />
+      <div className="flex gap-6 items-center justify-start px-1 xl:px-20 pt-12"> 
+        <h1 className="z-10 text-xl md:text-2xl font-bold text-white">My Bookings</h1>
+        <MdKeyboardArrowRight  className="z-10 text-xl md:text-2xl font-bold text-white"/>
+        <h1 className="z-10 z-10 text-xl md:text-2xl font-bold text-white">Profile</h1>
+      </div>
       <div className="flex flex-col lg:flex-row min-h-screen gap-4 px-1 xl:px-20">
         {/* Sidebar */}
-        <aside className="w-auto lg:w-72 xl:w-96 bg-white shadow-md mt-4 lg:mt-20 p-2 z-10 rounded">
+        <aside className="w-auto lg:w-72 xl:w-96 bg-white shadow-md mt-1 lg:mt-10 p-2 z-10 rounded">
           <div className="p-6 border-b border-gray-100">
             <h1 className="text-2xl font-semibold text-[#161616] mb-1">
               Mr. Lorem Ipsum
@@ -139,7 +145,7 @@ const layout = ({ children }) => {
         {/* Right Side */}
         <div className="flex flex-col flex-1">
           {/* common slider */}
-          <div className="z-10 mt-6 lg:mt-20 relative px-0 xl:px-12">
+          <div className="z-10 mt-6 lg:mt-10 relative px-0 xl:px-12">
             <div className="relative w-full lg:max-w-2xl xl:max-w-4xl 2xl:max-w-6xl mx-auto">
               <Swiper
                 navigation={{
