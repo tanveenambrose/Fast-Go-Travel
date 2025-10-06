@@ -11,8 +11,6 @@ import {
   FaSignOutAlt,
   FaArrowRight,
   FaArrowLeft,
-  FaArrowRight,
-  FaArrowLeft,
 } from "react-icons/fa";
 import { RiProfileLine } from "react-icons/ri";
 
